@@ -1,0 +1,87 @@
+'use client';
+
+import { Suspense, useEffect } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+
+function SuccessContent() {
+  const params   = useSearchParams();
+  const testSlug = params.get('test') || '';
+  const name     = params.get('name') || 'your test';
+
+  // Save purchase to localStorage so quiz page can check it
+  useEffect(() => {
+    if (!testSlug) return;
+    const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
+    if (!purchases.includes(testSlug)) {
+      purchases.push(testSlug);
+      localStorage.setItem('purchases', JSON.stringify(purchases));
+    }
+  }, [testSlug]);
+
+  return (
+    <div style={{ fontFamily: 'system-ui, sans-serif', minHeight: '100vh', background: '#F8FAFF',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+      <div style={{ maxWidth: '500px', width: '100%', textAlign: 'center' }}>
+        <div style={{ fontSize: '5rem', marginBottom: '16px' }}>🎉</div>
+        <div style={{
+          background: 'white', borderRadius: '20px', padding: '40px',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.08)'
+        }}>
+          <div style={{
+            background: '#DCFCE7', borderRadius: '50%', width: '80px', height: '80px',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            margin: '0 auto 20px', fontSize: '2.5rem'
+          }}>✅</div>
+
+          <h1 style={{ fontSize: '1.8rem', fontWeight: '900', color: '#111827', marginBottom: '8px' }}>
+            Payment Successful!
+          </h1>
+          <p style={{ color: '#6B7280', marginBottom: '24px', lineHeight: 1.6 }}>
+            You now have full access to <strong>{decodeURIComponent(name)}</strong>.
+            All questions are unlocked — practice as much as you want!
+          </p>
+
+          <div style={{ background: '#EFF6FF', borderRadius: '12px', padding: '16px', marginBottom: '28px' }}>
+            <p style={{ margin: 0, color: '#1E3A5F', fontWeight: '600', fontSize: '0.95rem' }}>
+              📧 A receipt has been sent to your email
+            </p>
+            <p style={{ margin: '4px 0 0', color: '#6B7280', fontSize: '0.85rem' }}>
+              Your access is lifetime — no expiry
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {testSlug && (
+              <Link href={`/quiz/${testSlug}`} style={{
+                background: '#1E3A5F', color: 'white', padding: '14px',
+                borderRadius: '12px', textDecoration: 'none', fontWeight: '700', fontSize: '1rem'
+              }}>
+                Start Practicing Now →
+              </Link>
+            )}
+            <Link href="/tests" style={{
+              background: '#F3F4F6', color: '#374151', padding: '14px',
+              borderRadius: '12px', textDecoration: 'none', fontWeight: '600', fontSize: '0.95rem'
+            }}>
+              View All Tests
+            </Link>
+          </div>
+        </div>
+        <p style={{ marginTop: '24px', color: '#9CA3AF', fontSize: '0.85rem' }}>
+          Questions? Email <a href="mailto:salal@salsoftsolutions.ca" style={{ color: '#2563EB' }}>
+            salal@salsoftsolutions.ca
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div style={{ textAlign: 'center', padding: '60px' }}>Loading...</div>}>
+      <SuccessContent />
+    </Suspense>
+  );
+}

@@ -1,65 +1,183 @@
-import Image from "next/image";
+import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
+  const tests = [
+    // Ontario G1 — special card with two buttons
+    { slug: 'ontario-g1',    name: 'Ontario G1 Knowledge Test', icon: '🚗', province: 'Ontario', isG1: true },
+    // Other tests — single button each
+    { slug: 'ontario-m1',    name: 'Ontario M1 Motorcycle',     icon: '🏍️', province: 'Ontario' },
+    { slug: 'bc-knowledge',  name: 'BC ICBC Knowledge Test',    icon: '🚗', province: 'BC' },
+    { slug: 'alberta-class5',name: 'Alberta Class 5 Knowledge', icon: '🚗', province: 'Alberta' },
+    { slug: 'citizenship',   name: 'Citizenship Test',          icon: '🍁', province: 'Canada' },
+    { slug: 'food-handler',  name: 'Food Handler',              icon: '🍽️', province: 'Canada' },
+    { slug: 'ontario-az',    name: 'AZ Truck Licence',          icon: '🚛', province: 'Ontario' },
+    { slug: 'whmis', name: 'WHMIS 2015 Certification', icon: '⚠️', province: 'Canada' },
+  ];
+
+  // Province badge colors
+  const provinceColors = {
+    Ontario: '#2563EB',
+    BC:      '#065F46',
+    Alberta: '#92400E',
+    Canada:  '#DC2626',
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      {/* Hero Section */}
+      <section style={{
+        background: 'linear-gradient(135deg, #1E3A5F 0%, #2563EB 100%)',
+        color: 'white', textAlign: 'center', padding: '80px 20px'
+      }}>
+        <h1 style={{ fontSize: '3rem', fontWeight: '900', marginBottom: '16px' }}>
+          🍁 TestMe Canada
+        </h1>
+        <p style={{ fontSize: '1.3rem', opacity: 0.9, marginBottom: '32px' }}>
+          Canada&apos;s #1 test preparation platform
+        </p>
+        <p style={{ fontSize: '1.1rem', opacity: 0.8, marginBottom: '40px' }}>
+          G1 · M1 · AZ · BC · Alberta · Citizenship · Food Handler · WHMIS
+        </p>
+        <Link href="/tests" style={{
+          backgroundColor: '#F0C040', color: '#1E3A5F',
+          padding: '16px 40px', borderRadius: '50px',
+          fontWeight: '800', fontSize: '1.1rem', textDecoration: 'none'
+        }}>
+          Start Practicing FREE →
+        </Link>
+      </section>
+
+      {/* Stats Bar */}
+      <section style={{ background: '#F8FAFF', padding: '40px 20px', textAlign: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '60px', flexWrap: 'wrap' }}>
+          {[
+            { number: '10+',   label: 'Province Tests' },
+            { number: '2000+', label: 'Practice Questions' },
+            { number: '62',    label: 'Road Signs' },
+            { number: '$7.99', label: 'Full Access' },
+          ].map(stat => (
+            <div key={stat.label}>
+              <div style={{ fontSize: '2.5rem', fontWeight: '900', color: '#1E3A5F' }}>
+                {stat.number}
+              </div>
+              <div style={{ color: '#6B7280' }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Test Cards Grid */}
+      <section style={{ padding: '60px 20px', maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '40px', color: '#1E3A5F' }}>
+          Choose Your Test
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px'
+        }}>
+          {tests.map(test => (
+            <div key={test.slug} style={{
+              background: 'white', borderRadius: '16px', padding: '28px',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+              border: test.isG1 ? '2px solid #2563EB' : '2px solid transparent',
+            }}>
+              {/* Icon + province badge */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                <span style={{ fontSize: '3rem' }}>{test.icon}</span>
+                <span style={{
+                background: `${(provinceColors as Record<string, string>)[test.province]}18`,
+                color: (provinceColors as Record<string, string>)[test.province],
+                  padding: '4px 12px', borderRadius: '20px',
+                  fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase'
+                }}>
+                  {test.province}
+                </span>
+              </div>
+
+              <h3 style={{ fontSize: '1.2rem', color: '#111827', marginBottom: '8px', fontWeight: '700' }}>
+                {test.name}
+              </h3>
+
+              <div style={{ color: '#16A34A', fontWeight: '600', marginBottom: '16px' }}>
+                ✅ 5 free questions
+              </div>
+
+              {/* Ontario G1 — two part buttons */}
+              {test.isG1 ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <Link href="/quiz/ontario-g1" style={{
+                    background: '#1E3A5F', color: 'white',
+                    padding: '11px 16px', borderRadius: '8px', textAlign: 'center',
+                    fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+                  }}>
+                    📋 Part 1 — General Rules
+                  </Link>
+                  <Link href="/quiz/ontario-g1-signs" style={{
+                    background: '#DC2626', color: 'white',
+                    padding: '11px 16px', borderRadius: '8px', textAlign: 'center',
+                    fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+                  }}>
+                    🛑 Part 2 — Road Signs
+                  </Link>
+                </div>
+              ) : (
+                <Link href={`/quiz/${test.slug}`} style={{
+                  display: 'block',
+                  background: (provinceColors as Record<string, string>)[test.province] || '#2563EB',
+                  color: 'white', padding: '11px 16px', borderRadius: '8px',
+                  textAlign: 'center', fontWeight: '700', textDecoration: 'none',
+                  fontSize: '0.95rem'
+                }}>
+                  Start Free →
+                </Link>
+              )}
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section style={{ background: '#1E3A5F', color: 'white', padding: '60px 20px', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '16px' }}>Simple Pricing</h2>
+        <p style={{ opacity: 0.8, marginBottom: '40px' }}>
+          Try 5 questions free — unlock full access for just $7.99 CAD
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          <div style={{ background: '#ffffff15', borderRadius: '16px', padding: '32px',
+                        width: '280px', border: '1px solid #ffffff30' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Free</h3>
+            <div style={{ fontSize: '2.5rem', fontWeight: '900', marginBottom: '24px' }}>$0</div>
+            {['5 sample questions', 'Basic score feedback', 'All tests available', 'No account needed'].map(f => (
+              <div key={f} style={{ marginBottom: '12px', opacity: 0.9 }}>✓ {f}</div>
+            ))}
+          </div>
+          <div style={{ background: '#F0C040', borderRadius: '16px', padding: '32px',
+                        width: '280px', color: '#1E3A5F' }}>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Full Access</h3>
+            <div style={{ fontSize: '2.5rem', fontWeight: '900', marginBottom: '4px' }}>$7.99</div>
+            <div style={{ marginBottom: '24px', fontSize: '0.9rem' }}>CAD — one time per test</div>
+            {['200+ questions', 'Unlimited attempts', 'Progress tracking',
+              'Weak spots analysis', 'Exam simulation', 'Lifetime access'].map(f => (
+              <div key={f} style={{ marginBottom: '12px', fontWeight: '600' }}>✓ {f}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{ background: '#111827', color: '#9CA3AF', padding: '40px 20px', textAlign: 'center' }}>
+        <p style={{ fontSize: '1.1rem', color: 'white', marginBottom: '8px' }}>🍁 TestMe Canada</p>
+        <p>Developed by <a href="https://salsoftsolutions.ca" style={{ color: '#F0C040' }}>SalSoftSolutions.ca</a></p>
+        <p style={{ marginTop: '8px' }}>
+          <a href="/privacy" style={{ color: '#6B7280', marginRight: '16px' }}>Privacy Policy</a>
+          <a href="/terms"   style={{ color: '#6B7280', marginRight: '16px' }}>Terms of Use</a>
+          <a href="/contact" style={{ color: '#6B7280' }}>Contact</a>
+        </p>
+        <p style={{ marginTop: '16px' }}>© 2026 SalSoftSolutions. All rights reserved.</p>
+      </footer>
+    </main>
   );
 }
