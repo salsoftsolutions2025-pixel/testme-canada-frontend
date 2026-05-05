@@ -1,38 +1,94 @@
 'use client';
 
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 function SuccessContent() {
-  const params   = useSearchParams();
-  const testSlug = params.get('test') || '';
-  const name     = params.get('name') || 'your test';
+  const params    = useSearchParams();
+  const testSlug  = params.get('test') || '';
+  const name      = params.get('name') || 'your test';
+  const sessionId = params.get('session_id') || '';
 
-  // Save purchase to localStorage so quiz page can check it
+  const [status, setStatus] = useState('loading'); // 'loading' | 'verified' | 'error'
+  const [errMsg, setErrMsg] = useState('');
+
   useEffect(() => {
-    if (!testSlug) return;
-    const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
-    if (!purchases.includes(testSlug)) {
-      purchases.push(testSlug);
-      localStorage.setItem('purchases', JSON.stringify(purchases));
+    if (!sessionId || !testSlug) {
+      setErrMsg('Invalid payment link.');
+      setStatus('error');
+      return;
     }
-  }, [testSlug]);
 
+    // Verify with Stripe via backend before granting access
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+    fetch(`${apiUrl}/api/payments/verify/${sessionId}`)
+      .then(r => r.json())
+      .then(data => {
+        if (data.success && data.paid) {
+          // ✅ Payment confirmed — now save to localStorage
+          const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
+          if (!purchases.includes(testSlug)) {
+            purchases.push(testSlug);
+            localStorage.setItem('purchases', JSON.stringify(purchases));
+          }
+          setStatus('verified');
+        } else {
+          setErrMsg('Payment was not completed. Please try again or contact support.');
+          setStatus('error');
+        }
+      })
+      .catch(() => {
+        setErrMsg('Could not verify your payment. Please contact support.');
+        setStatus('error');
+      });
+  }, [sessionId, testSlug]);
+
+  // Loading state
+  if (status === 'loading') return (
+    <div style={{ fontFamily: 'system-ui', minHeight: '100vh', background: '#F8FAFF',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '3rem', marginBottom: '16px' }}>⏳</div>
+        <p style={{ color: '#374151', fontSize: '1.1rem' }}>Verifying your payment...</p>
+      </div>
+    </div>
+  );
+
+  // Error / fraud attempt state
+  if (status === 'error') return (
+    <div style={{ fontFamily: 'system-ui', minHeight: '100vh', background: '#F8FAFF',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+      <div style={{ maxWidth: '500px', width: '100%', textAlign: 'center' }}>
+        <div style={{ background: 'white', borderRadius: '20px', padding: '40px',
+                      boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+          <div style={{ fontSize: '4rem', marginBottom: '16px' }}>❌</div>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#111827', marginBottom: '12px' }}>
+            Payment Verification Failed
+          </h1>
+          <p style={{ color: '#6B7280', marginBottom: '24px' }}>{errMsg}</p>
+          <Link href="/pricing" style={{
+            background: '#1E3A5F', color: 'white', padding: '14px 28px',
+            borderRadius: '12px', textDecoration: 'none', fontWeight: '700'
+          }}>
+            Back to Pricing
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+
+  // ✅ Verified — show success UI
   return (
     <div style={{ fontFamily: 'system-ui, sans-serif', minHeight: '100vh', background: '#F8FAFF',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
       <div style={{ maxWidth: '500px', width: '100%', textAlign: 'center' }}>
         <div style={{ fontSize: '5rem', marginBottom: '16px' }}>🎉</div>
-        <div style={{
-          background: 'white', borderRadius: '20px', padding: '40px',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.08)'
-        }}>
-          <div style={{
-            background: '#DCFCE7', borderRadius: '50%', width: '80px', height: '80px',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto 20px', fontSize: '2.5rem'
-          }}>✅</div>
+        <div style={{ background: 'white', borderRadius: '20px', padding: '40px',
+                      boxShadow: '0 8px 32px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: '#DCFCE7', borderRadius: '50%', width: '80px', height: '80px',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        margin: '0 auto 20px', fontSize: '2.5rem' }}>✅</div>
 
           <h1 style={{ fontSize: '1.8rem', fontWeight: '900', color: '#111827', marginBottom: '8px' }}>
             Payment Successful!
