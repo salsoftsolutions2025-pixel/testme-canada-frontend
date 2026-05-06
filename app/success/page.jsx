@@ -13,20 +13,20 @@ function SuccessContent() {
   const [status, setStatus] = useState('loading'); // 'loading' | 'verified' | 'error'
   const [errMsg, setErrMsg] = useState('');
 
-  useEffect(() => {
-    if (!sessionId || !testSlug) {
-      setErrMsg('Invalid payment link.');
-      setStatus('error');
-      return;
-    }
+useEffect(() => {
+    const run = async () => {
+      if (!sessionId || !testSlug) {
+        setErrMsg('Invalid payment link.');
+        setStatus('error');
+        return;
+      }
 
-    // Verify with Stripe via backend before granting access
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
-    fetch(`${apiUrl}/api/payments/verify/${sessionId}`)
-      .then(r => r.json())
-      .then(data => {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+      try {
+        const r    = await fetch(`${apiUrl}/api/payments/verify/${sessionId}`);
+        const data = await r.json();
+
         if (data.success && data.paid) {
-          // ✅ Payment confirmed — now save to localStorage
           const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
           if (!purchases.includes(testSlug)) {
             purchases.push(testSlug);
@@ -37,11 +37,13 @@ function SuccessContent() {
           setErrMsg('Payment was not completed. Please try again or contact support.');
           setStatus('error');
         }
-      })
-      .catch(() => {
+      } catch {
         setErrMsg('Could not verify your payment. Please contact support.');
         setStatus('error');
-      });
+      }
+    };
+
+    run();
   }, [sessionId, testSlug]);
 
   // Loading state

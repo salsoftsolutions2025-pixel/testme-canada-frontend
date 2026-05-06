@@ -8,68 +8,68 @@ const LABELS = ['A', 'B', 'C', 'D'];
 
 // ── Ontario G1 Road Signs — all 62 signs ─────────────────────
 const SIGNS_QUESTIONS = [
-  { id:1,  image:'/signs/stop.png',                    question:'What does this sign mean?', choices:['Yield to cross traffic','Come to a complete stop','Slow down and proceed','No entry'],                                      correct:1, explanation:'The red octagon STOP sign means you must come to a complete stop every time.' },
-  { id:2,  image:'/signs/yield.png',                   question:'What does this sign mean?', choices:['Stop completely','Speed up to merge','Slow down and yield to traffic in the intersection','No U-turn'],                     correct:2, explanation:'The yield sign means slow down and give the right-of-way to traffic already in the intersection.' },
-  { id:3,  image:'/signs/school_zone.png',             question:'What does this sign mean?', choices:['Hospital zone','Playground zone','School zone — watch for children crossing','Pedestrian crosswalk ahead'],                correct:2, explanation:'The pentagon-shaped school zone sign warns that children may be crossing. Slow to 40 km/h when children are present.' },
-  { id:4,  image:'/signs/no_entry.png',                question:'What does this sign mean?', choices:['One-way street ahead','No straight through / Do not go straight','Road closed permanently','Construction zone ahead'],     correct:1, explanation:'This sign means you are not permitted to go straight through the intersection. You must turn left or right.' },
-  { id:5,  image:'/signs/speed_limit_50.png',          question:'What does this sign mean?', choices:['Minimum speed is 50 km/h','Recommended speed for curve','Speed limit zone ends','Maximum speed is 50 km/h'],              correct:3, explanation:'Speed limit signs show the maximum legal speed under normal road and weather conditions.' },
-  { id:6,  image:'/signs/pedestrian_crossing.png',     question:'What does this sign mean?', choices:['Bicycle crossing ahead','School crossing','Pedestrian crosswalk — watch for people crossing','Playground area'],            correct:2, explanation:'The pedestrian crosswalk sign warns you that people may be crossing the road ahead.' },
-  { id:7,  image:'/signs/railway_crossing.png',        question:'What does this sign mean?', choices:['Road bump ahead','Railway crossing ahead — watch for trains','Bridge ahead','Construction zone'],                          correct:1, explanation:'The round railway crossing sign warns you that train tracks cross the road ahead. Always look both ways.' },
-  { id:8,  image:'/signs/no_left_turn.png',            question:'What does this sign mean?', choices:['No right turn','No U-turn','No left turn permitted','One-way street'],                                                      correct:2, explanation:'The no left turn sign means you are prohibited from turning left at that intersection.' },
-  { id:9,  image:'/signs/two_way_traffic.png',         question:'What does this sign mean?', choices:['Lane ends merge left','Divided highway ends','Two-way traffic ahead','Road narrows'],                                       correct:2, explanation:'This sign warns that you are leaving a divided highway and entering a two-way traffic road.' },
-  { id:10, image:'/signs/keep_right.png',              question:'What does this sign mean?', choices:['Road closed','Keep right of the divider','Lane ends merge right','No passing zone'],                                        correct:1, explanation:'The keep right sign means you must stay to the right side of a traffic island or divider.' },
-  { id:11, image:'/signs/no_right_turn.png',           question:'What does this sign mean?', choices:['Proceed right only','No right turn permitted','Road closed to the right','One way street'],                                correct:1, explanation:'The no right turn sign means you cannot turn right at that intersection.' },
-  { id:12, image:'/signs/no_u_turn.png',               question:'What does this sign mean?', choices:['No left turn','No U-turn permitted at this location','Proceed straight only','One way traffic'],                           correct:1, explanation:'The no U-turn sign means you cannot make a U-turn at that location.' },
-  { id:13, image:'/signs/one_way_right.png',           question:'What does this sign mean?', choices:['Two way traffic','Keep right','One way — traffic flows in the direction of the arrow only','Road narrows right'],           correct:2, explanation:'One way signs mean all traffic moves in the single direction shown by the arrow.' },
-  { id:14, image:'/signs/wrong_way.png',               question:'What does this sign mean?', choices:['Road under construction','Do not enter — you are going the wrong way','One way street ahead','Detour ahead'],              correct:1, explanation:'Wrong way signs appear on exit ramps and one-way roads to warn drivers they are going in the wrong direction.' },
-  { id:15, image:'/signs/speed_limit_100.png',         question:'What does this sign mean?', choices:['Minimum speed is 100 km/h','Recommended speed for highway','Maximum speed is 100 km/h','Speed zone ends'],                 correct:2, explanation:'100 km/h is the maximum speed on most Ontario highways unless posted otherwise.' },
-  { id:16, image:'/signs/speed_limit_80.png',          question:'What does this sign mean?', choices:['Recommended curve speed','Maximum speed is 80 km/h','Minimum speed is 80 km/h','Speed limit ends'],                       correct:1, explanation:'80 km/h zones are common on rural roads and highways approaching towns.' },
-  { id:17, image:'/signs/speed_limit_40.png',          question:'What does this sign mean?', choices:['Maximum speed is 40 km/h','Minimum speed is 40 km/h','School zone speed','Recommended speed'],                            correct:0, explanation:'40 km/h is the maximum speed in school zones when children are present.' },
-  { id:18, image:'/signs/no_parking.png',              question:'What does this sign mean?', choices:['No stopping anytime','Parking prohibited in this area','No standing zone','Tow away zone'],                               correct:1, explanation:'The no parking sign means you cannot park your vehicle in that location.' },
-  { id:19, image:'/signs/no_stopping.png',             question:'What does this sign mean?', choices:['No parking between posted hours','You must not stop your vehicle here at any time','Slow down ahead','No standing zone'],   correct:1, explanation:'No stopping means you cannot stop your vehicle at any time — stricter than no parking.' },
-  { id:20, image:'/signs/curve_ahead.png',             question:'What does this sign mean?', choices:['Sharp right turn','Road ends','Curve ahead — slow down and be prepared','Detour right'],                                   correct:2, explanation:'The curve ahead sign warns of a bend in the road. Reduce speed before entering the curve.' },
-  { id:21, image:'/signs/slippery_road.png',           question:'What does this sign mean?', choices:['Road under construction','Gravel road ahead','Road may be slippery when wet — reduce speed','Bumpy road ahead'],           correct:2, explanation:'The slippery road sign warns the road surface becomes dangerous when wet. Slow down.' },
-  { id:22, image:'/signs/deer_crossing.png',           question:'What does this sign mean?', choices:['Farm animals crossing','Deer frequently cross this area — watch for wildlife','Forest area ahead','Hunting zone'],         correct:1, explanation:'The deer crossing sign warns that deer and other wildlife regularly cross the road in that area.' },
-  { id:23, image:'/signs/construction.png',            question:'What does this sign mean?', choices:['Hospital ahead','Workers and equipment on or near the road — slow down','Road closed permanently','Detour begins'],        correct:1, explanation:'Construction signs warn of road work ahead. Fines double in construction zones when workers are present.' },
-  { id:24, image:'/signs/merge_right.png',             question:'What does this sign mean?', choices:['Keep left','Road narrows — merge with traffic on the right','Lane closed ahead','Passing lane ends'],                     correct:1, explanation:'The merge right sign means your lane is ending and you must safely merge into traffic on your right.' },
-  { id:25, image:'/signs/road_narrows.png',            question:'What does this sign mean?', choices:['Bridge ahead','Road construction begins','The road ahead becomes narrower — stay centred','Lane ends merge left'],          correct:2, explanation:'Road narrows signs warn that the pavement width decreases ahead. Slow down and stay alert.' },
-  { id:26, image:'/signs/divided_highway.png',         question:'What does this sign mean?', choices:['Two-way traffic begins','Divided highway ends — two-way traffic ahead','Highway entrance','Median ends'],                 correct:1, explanation:'This sign warns that the divided highway is ending and you are entering a two-way road.' },
-  { id:27, image:'/signs/sharp_turn.png',              question:'What does this sign mean?', choices:['Gentle curve ahead','Winding road ahead','Very sharp turn ahead — slow down significantly','Road ends'],                  correct:2, explanation:'A sharp turn sign indicates a severe bend. Slow down well before the sign.' },
-  { id:28, image:'/signs/traffic_light_ahead.png',     question:'What does this sign mean?', choices:['Intersection ahead','Traffic lights control the intersection ahead','Railway crossing ahead','School crossing ahead'],     correct:1, explanation:'This sign warns that traffic lights are ahead — especially useful when the intersection is not visible.' },
-  { id:29, image:'/signs/bikes_only.png',              question:'What does this sign mean?', choices:['No bicycles allowed','Shared road with bikes','This lane is reserved for bicycles only','Bicycle crossing ahead'],         correct:2, explanation:'The bicycle lane sign means that lane is reserved exclusively for cyclists. Do not drive or park in it.' },
-  { id:30, image:'/signs/hill_ahead.png',              question:'What does this sign mean?', choices:['Speed bump ahead','Steep hill ahead — check brakes and control speed','Road ends at water','Rough road ahead'],          correct:1, explanation:'The steep hill sign warns of a significant downgrade. Trucks must use lower gears. All drivers should slow down.' },
-  { id:31, image:'/signs/do_not_pass.png',             question:'What does this sign mean?', choices:['Pass only when safe','No passing on this road','Passing lane ahead','Slow vehicles must pass here'],                      correct:1, explanation:'The no passing sign means you are not allowed to pass other vehicles on this road.' },
-  { id:32, image:'/signs/no_pedestrians.png',          question:'What does this sign mean?', choices:['Pedestrian crossing ahead','Watch for pedestrians','No pedestrians allowed on this road','Pedestrian zone begins'],        correct:2, explanation:'This sign prohibits pedestrians from using this road or area.' },
-  { id:33, image:'/signs/no_bicycles.png',             question:'What does this sign mean?', choices:['Bicycle lane ahead','Bicycle crossing ahead','No bicycles allowed on this road','Bicycles must dismount'],                correct:2, explanation:'This sign prohibits cyclists from using this road.' },
-  { id:34, image:'/signs/accessible_parking.png',      question:'What does this sign mean?', choices:['Hospital parking only','Reserved for emergency vehicles','This space is only for vehicles with a valid Accessible Parking Permit','Loading zone'], correct:2, explanation:'Only vehicles displaying a valid Accessible Parking Permit may use this space.' },
-  { id:35, image:'/signs/slow_traffic_keep_right.png', question:'What does this sign mean?', choices:['All traffic must keep right','Slow traffic on multi-lane roads must keep right','Right lane closed ahead','Lane ends merge left'], correct:1, explanation:'Slow-moving vehicles must use the right lane on multi-lane roads.' },
-  { id:36, image:'/signs/hov_lane.png',                question:'What does this sign mean?', choices:['Any vehicle may use this lane','This lane is only for buses','Only vehicles with 2 or more occupants may use this lane','HOV lane ends ahead'], correct:2, explanation:'High Occupancy Vehicle lanes are reserved for vehicles with the minimum number of passengers shown.' },
-  { id:37, image:'/signs/one_way_left.png',            question:'What does this sign mean?', choices:['Two-way traffic','Keep left','One way — traffic flows to the left only','Road narrows left'],                             correct:2, explanation:'One way signs mean all traffic moves in the single direction shown by the arrow.' },
-  { id:38, image:'/signs/keep_right_divide.png',       question:'What does this sign mean?', choices:['Stay in current lane','Keep to the right side of the traffic island or divider','Lane closed on right','No right turns'],correct:1, explanation:'The keep right sign tells drivers to pass to the right of a traffic island or obstruction.' },
-  { id:39, image:'/signs/speed_limit_ahead.png',       question:'What does this sign mean?', choices:['Speed limit ends here','Speed limit zone begins','Speed limit changes ahead — be prepared','Reduced speed zone'],         correct:2, explanation:'This sign warns you that the posted speed limit is about to change. Prepare to adjust your speed.' },
-  { id:40, image:'/signs/do_not_enter.png',            question:'What does this sign mean?', choices:['One-way street ahead','Do not enter this road from your direction','Road closed for construction','Yield to oncoming traffic'], correct:1, explanation:'The do not enter sign means you cannot enter this road from your direction.' },
-  { id:41, image:'/signs/winding_road.png',            question:'What does this sign mean?', choices:['One curve ahead','Sharp turn ahead','Road has several curves ahead — drive carefully','Detour ahead'],                    correct:2, explanation:'A winding road sign warns that the road has a series of curves ahead. Reduce speed and drive carefully.' },
-  { id:42, image:'/signs/hidden_school_bus.png',       question:'What does this sign mean?', choices:['School zone ahead','You are approaching a hidden school bus stop — slow down and watch for children','School bus parking area','No school buses'], correct:1, explanation:'This sign warns of a hidden school bus stop where the bus may not be visible. Slow down.' },
-  { id:43, image:'/signs/bicycle_crossing.png',        question:'What does this sign mean?', choices:['Bicycle lane begins','Cyclists must stop here','Bicycles crossing the road ahead — watch for cyclists','Bicycle route ends'], correct:2, explanation:'This warning sign tells drivers that cyclists may be crossing the road ahead.' },
-  { id:44, image:'/signs/slippery_when_wet.png',       question:'What does this sign mean?', choices:['Road under construction','Gravel surface ahead','Pavement is slippery when wet — slow down','Road floods in rain'],       correct:2, explanation:'This sign warns that the road surface becomes dangerous when wet. Reduce speed in wet conditions.' },
-  { id:45, image:'/signs/stop_ahead.png',              question:'What does this sign mean?', choices:['Yield sign ahead','Traffic lights ahead','Slow down — a stop sign is ahead','Road closed ahead'],                        correct:2, explanation:'This warning sign tells you a stop sign is coming up. Begin slowing down now.' },
-  { id:46, image:'/signs/divided_highway_begins.png',  question:'What does this sign mean?', choices:['Divided highway begins ahead — keep right','Road narrows ahead','Highway entrance ramp','Passing lane begins'],            correct:0, explanation:'This sign warns that a divided highway with a median is beginning. Keep to the right-hand road.' },
-  { id:47, image:'/signs/right_lane_ends.png',         question:'What does this sign mean?', choices:['Keep right','Right lane ends ahead — merge left safely','Road narrows on right','Exit ramp ahead on right'],              correct:1, explanation:'This sign warns that the right lane is ending. Drivers in the right lane must safely merge left.' },
-  { id:48, image:'/signs/roundabout_ahead.png',        question:'What does this sign mean?', choices:['Traffic circle closed ahead','Reduce speed — roundabout ahead — traffic flows counter-clockwise','Yield sign ahead','U-turn permitted here'], correct:1, explanation:'This sign warns that a roundabout is ahead. Reduce speed and yield to traffic already in the roundabout.' },
-  { id:49, image:'/signs/narrow_bridge.png',           question:'What does this sign mean?', choices:['Low bridge ahead','Weight limit on bridge ahead','Narrow bridge ahead — may not accommodate two vehicles side by side','Bridge under construction'], correct:2, explanation:'This sign warns that the bridge ahead is narrower than the road. Use caution.' },
-  { id:50, image:'/signs/share_road.png',              question:'What does this sign mean?', choices:['Bicycle lane begins','Cyclists must use the sidewalk','Road is shared — provide safe space for cyclists','No vehicles allowed'], correct:2, explanation:'This sign warns that cyclists and vehicles share the road ahead. Give cyclists safe space.' },
-  { id:51, image:'/signs/road_work_ahead.png',         question:'What does this sign mean?', choices:['Road closed permanently','Slow down — road work zone ahead','Detour begins here','Construction completed'],               correct:1, explanation:'This orange sign warns of road work ahead. Slow down and watch for workers and equipment.' },
-  { id:52, image:'/signs/construction_zone.png',       question:'What does this sign mean?', choices:['Road closed — find alternate route','You are entering a construction zone — drive with extra caution','Construction zone ends','Workers not present'], correct:1, explanation:'Orange construction zone signs warn you to reduce speed and drive carefully. Fines are doubled when workers are present.' },
-  { id:53, image:'/signs/detour.png',                  question:'What does this sign mean?', choices:['Road work complete — resume normal route','Temporary detour from normal traffic route','No through traffic','Road closed ahead'], correct:1, explanation:'Orange detour signs guide you around a road closure. Follow them until you return to your normal route.' },
-  { id:54, image:'/signs/lane_closed.png',             question:'What does this sign mean?', choices:['Pass the closed lane quickly','Merge with traffic in the open lane — lane ahead is closed for roadwork','Road closed — turn around','Keep in current lane'], correct:1, explanation:'This sign warns that a lane is closed ahead due to road work. Safely merge into the open lane.' },
-  { id:55, image:'/signs/flagger_ahead.png',           question:'What does this sign mean?', choices:['Traffic lights ahead','Speed up to clear the construction zone','Traffic control person ahead — drive slowly and follow instructions','Construction zone ends'], correct:2, explanation:'This sign warns that a person is controlling traffic ahead. Slow down and follow all directions.' },
-  { id:56, image:'/signs/construction_1km_ahead.png',  question:'What does this sign mean?', choices:['Road closed 1 km ahead','Road work begins in 1 kilometre — reduce speed and prepare','Detour in 1 km','Speed limit reduces to 1 km/h'], correct:1, explanation:'This orange sign warns that a construction zone begins 1 kilometre ahead. Slow down and be prepared.' },
-  { id:57, image:'/signs/no_right_on_red.png',         question:'What does this sign mean?', choices:['No right turn at any time','No right turn permitted when facing a red light at this intersection','Right turn on red permitted with caution','Stop before turning right on red'], correct:1, explanation:'This sign prohibits right turns when the traffic light is red at that specific intersection.' },
-  { id:58, image:'/signs/no_stopping_zone.png',        question:'What does this sign mean?', choices:['No parking between the signs','No standing — passengers may exit only','You must not stop your vehicle even for a moment between these signs','Tow away zone during rush hour'], correct:2, explanation:'No stopping means you cannot stop your vehicle at any time in this area — not even for a moment.' },
-  { id:59, image:'/signs/community_safety_zone.png',   question:'What does this sign mean?', choices:['School zone with reduced speed','Hospital area — drive with caution','Special community zone where traffic fines are increased for violations','Construction workers present'], correct:2, explanation:'Community Safety Zones identify areas with special risk to pedestrians. Traffic fines are increased for violations.' },
-  { id:60, image:'/signs/snowmobiles_permitted.png',   question:'What does this sign mean?', choices:['No snowmobiles allowed on this road','Snowmobile crossing ahead','Snowmobiles may use this road','Winter road conditions ahead'], correct:2, explanation:'This regulatory sign indicates that snowmobiles are permitted to use this road.' },
-  { id:61, image:'/signs/parking_permitted.png',       question:'What does this sign mean?', choices:['No parking at any time','Parking is prohibited except for permit holders','You may park in this area between the signs during the posted times','Free parking zone'], correct:2, explanation:'This sign indicates that parking is permitted in the area between paired signs during the hours shown.' },
-  { id:62, image:'/signs/flashing_arrow.png',          question:'What does this sign mean?', choices:['Lane closed ahead — merge now','Road work zone begins','Flashing lights on arrows show the direction traffic must follow','Emergency vehicle approaching'], correct:2, explanation:'Flashing arrow boards in construction zones direct traffic to move in the indicated direction. Always follow the arrows.' },
+  { id:1,  image:'/signs/ontario/stop.png',                    question:'What does this sign mean?', choices:['Yield to cross traffic','Come to a complete stop','Slow down and proceed','No entry'],                                      correct:1, explanation:'The red octagon STOP sign means you must come to a complete stop every time.' },
+  { id:2,  image:'/signs/ontario/yield.png',                   question:'What does this sign mean?', choices:['Stop completely','Speed up to merge','Slow down and yield to traffic in the intersection','No U-turn'],                     correct:2, explanation:'The yield sign means slow down and give the right-of-way to traffic already in the intersection.' },
+  { id:3,  image:'/signs/ontario/school_zone.png',             question:'What does this sign mean?', choices:['Hospital zone','Playground zone','School zone — watch for children crossing','Pedestrian crosswalk ahead'],                correct:2, explanation:'The pentagon-shaped school zone sign warns that children may be crossing. Slow to 40 km/h when children are present.' },
+  { id:4,  image:'/signs/ontario/no_entry.png',                question:'What does this sign mean?', choices:['One-way street ahead','No straight through / Do not go straight','Road closed permanently','Construction zone ahead'],     correct:1, explanation:'This sign means you are not permitted to go straight through the intersection. You must turn left or right.' },
+  { id:5,  image:'/signs/ontario/speed_limit_50.png',          question:'What does this sign mean?', choices:['Minimum speed is 50 km/h','Recommended speed for curve','Speed limit zone ends','Maximum speed is 50 km/h'],              correct:3, explanation:'Speed limit signs show the maximum legal speed under normal road and weather conditions.' },
+  { id:6,  image:'/signs/ontario/pedestrian_crossing.png',     question:'What does this sign mean?', choices:['Bicycle crossing ahead','School crossing','Pedestrian crosswalk — watch for people crossing','Playground area'],            correct:2, explanation:'The pedestrian crosswalk sign warns you that people may be crossing the road ahead.' },
+  { id:7,  image:'/signs/ontario/railway_crossing.png',        question:'What does this sign mean?', choices:['Road bump ahead','Railway crossing ahead — watch for trains','Bridge ahead','Construction zone'],                          correct:1, explanation:'The round railway crossing sign warns you that train tracks cross the road ahead. Always look both ways.' },
+  { id:8,  image:'/signs/ontario/no_left_turn.png',            question:'What does this sign mean?', choices:['No right turn','No U-turn','No left turn permitted','One-way street'],                                                      correct:2, explanation:'The no left turn sign means you are prohibited from turning left at that intersection.' },
+  { id:9,  image:'/signs/ontario/two_way_traffic.png',         question:'What does this sign mean?', choices:['Lane ends merge left','Divided highway ends','Two-way traffic ahead','Road narrows'],                                       correct:2, explanation:'This sign warns that you are leaving a divided highway and entering a two-way traffic road.' },
+  { id:10, image:'/signs/ontario/keep_right.png',              question:'What does this sign mean?', choices:['Road closed','Keep right of the divider','Lane ends merge right','No passing zone'],                                        correct:1, explanation:'The keep right sign means you must stay to the right side of a traffic island or divider.' },
+  { id:11, image:'/signs/ontario/no_right_turn.png',           question:'What does this sign mean?', choices:['Proceed right only','No right turn permitted','Road closed to the right','One way street'],                                correct:1, explanation:'The no right turn sign means you cannot turn right at that intersection.' },
+  { id:12, image:'/signs/ontario/no_u_turn.png',               question:'What does this sign mean?', choices:['No left turn','No U-turn permitted at this location','Proceed straight only','One way traffic'],                           correct:1, explanation:'The no U-turn sign means you cannot make a U-turn at that location.' },
+  { id:13, image:'/signs/ontario/one_way_right.png',           question:'What does this sign mean?', choices:['Two way traffic','Keep right','One way — traffic flows in the direction of the arrow only','Road narrows right'],           correct:2, explanation:'One way signs mean all traffic moves in the single direction shown by the arrow.' },
+  { id:14, image:'/signs/ontario/wrong_way.png',               question:'What does this sign mean?', choices:['Road under construction','Do not enter — you are going the wrong way','One way street ahead','Detour ahead'],              correct:1, explanation:'Wrong way signs appear on exit ramps and one-way roads to warn drivers they are going in the wrong direction.' },
+  { id:15, image:'/signs/ontario/speed_limit_100.png',         question:'What does this sign mean?', choices:['Minimum speed is 100 km/h','Recommended speed for highway','Maximum speed is 100 km/h','Speed zone ends'],                 correct:2, explanation:'100 km/h is the maximum speed on most Ontario highways unless posted otherwise.' },
+  { id:16, image:'/signs/ontario/speed_limit_80.png',          question:'What does this sign mean?', choices:['Recommended curve speed','Maximum speed is 80 km/h','Minimum speed is 80 km/h','Speed limit ends'],                       correct:1, explanation:'80 km/h zones are common on rural roads and highways approaching towns.' },
+  { id:17, image:'/signs/ontario/speed_limit_40.png',          question:'What does this sign mean?', choices:['Maximum speed is 40 km/h','Minimum speed is 40 km/h','School zone speed','Recommended speed'],                            correct:0, explanation:'40 km/h is the maximum speed in school zones when children are present.' },
+  { id:18, image:'/signs/ontario/no_parking.png',              question:'What does this sign mean?', choices:['No stopping anytime','Parking prohibited in this area','No standing zone','Tow away zone'],                               correct:1, explanation:'The no parking sign means you cannot park your vehicle in that location.' },
+  { id:19, image:'/signs/ontario/no_stopping.png',             question:'What does this sign mean?', choices:['No parking between posted hours','You must not stop your vehicle here at any time','Slow down ahead','No standing zone'],   correct:1, explanation:'No stopping means you cannot stop your vehicle at any time — stricter than no parking.' },
+  { id:20, image:'/signs/ontario/curve_ahead.png',             question:'What does this sign mean?', choices:['Sharp right turn','Road ends','Curve ahead — slow down and be prepared','Detour right'],                                   correct:2, explanation:'The curve ahead sign warns of a bend in the road. Reduce speed before entering the curve.' },
+  { id:21, image:'/signs/ontario/slippery_road.png',           question:'What does this sign mean?', choices:['Road under construction','Gravel road ahead','Road may be slippery when wet — reduce speed','Bumpy road ahead'],           correct:2, explanation:'The slippery road sign warns the road surface becomes dangerous when wet. Slow down.' },
+  { id:22, image:'/signs/ontario/deer_crossing.png',           question:'What does this sign mean?', choices:['Farm animals crossing','Deer frequently cross this area — watch for wildlife','Forest area ahead','Hunting zone'],         correct:1, explanation:'The deer crossing sign warns that deer and other wildlife regularly cross the road in that area.' },
+  { id:23, image:'/signs/ontario/construction.png',            question:'What does this sign mean?', choices:['Hospital ahead','Workers and equipment on or near the road — slow down','Road closed permanently','Detour begins'],        correct:1, explanation:'Construction signs warn of road work ahead. Fines double in construction zones when workers are present.' },
+  { id:24, image:'/signs/ontario/merge_right.png',             question:'What does this sign mean?', choices:['Keep left','Road narrows — merge with traffic on the right','Lane closed ahead','Passing lane ends'],                     correct:1, explanation:'The merge right sign means your lane is ending and you must safely merge into traffic on your right.' },
+  { id:25, image:'/signs/ontario/road_narrows.png',            question:'What does this sign mean?', choices:['Bridge ahead','Road construction begins','The road ahead becomes narrower — stay centred','Lane ends merge left'],          correct:2, explanation:'Road narrows signs warn that the pavement width decreases ahead. Slow down and stay alert.' },
+  { id:26, image:'/signs/ontario/divided_highway.png',         question:'What does this sign mean?', choices:['Two-way traffic begins','Divided highway ends — two-way traffic ahead','Highway entrance','Median ends'],                 correct:1, explanation:'This sign warns that the divided highway is ending and you are entering a two-way road.' },
+  { id:27, image:'/signs/ontario/sharp_turn.png',              question:'What does this sign mean?', choices:['Gentle curve ahead','Winding road ahead','Very sharp turn ahead — slow down significantly','Road ends'],                  correct:2, explanation:'A sharp turn sign indicates a severe bend. Slow down well before the sign.' },
+  { id:28, image:'/signs/ontario/traffic_light_ahead.png',     question:'What does this sign mean?', choices:['Intersection ahead','Traffic lights control the intersection ahead','Railway crossing ahead','School crossing ahead'],     correct:1, explanation:'This sign warns that traffic lights are ahead — especially useful when the intersection is not visible.' },
+  { id:29, image:'/signs/ontario/bikes_only.png',              question:'What does this sign mean?', choices:['No bicycles allowed','Shared road with bikes','This lane is reserved for bicycles only','Bicycle crossing ahead'],         correct:2, explanation:'The bicycle lane sign means that lane is reserved exclusively for cyclists. Do not drive or park in it.' },
+  { id:30, image:'/signs/ontario/hill_ahead.png',              question:'What does this sign mean?', choices:['Speed bump ahead','Steep hill ahead — check brakes and control speed','Road ends at water','Rough road ahead'],          correct:1, explanation:'The steep hill sign warns of a significant downgrade. Trucks must use lower gears. All drivers should slow down.' },
+  { id:31, image:'/signs/ontario/do_not_pass.png',             question:'What does this sign mean?', choices:['Pass only when safe','No passing on this road','Passing lane ahead','Slow vehicles must pass here'],                      correct:1, explanation:'The no passing sign means you are not allowed to pass other vehicles on this road.' },
+  { id:32, image:'/signs/ontario/no_pedestrians.png',          question:'What does this sign mean?', choices:['Pedestrian crossing ahead','Watch for pedestrians','No pedestrians allowed on this road','Pedestrian zone begins'],        correct:2, explanation:'This sign prohibits pedestrians from using this road or area.' },
+  { id:33, image:'/signs/ontario/no_bicycles.png',             question:'What does this sign mean?', choices:['Bicycle lane ahead','Bicycle crossing ahead','No bicycles allowed on this road','Bicycles must dismount'],                correct:2, explanation:'This sign prohibits cyclists from using this road.' },
+  { id:34, image:'/signs/ontario/accessible_parking.png',      question:'What does this sign mean?', choices:['Hospital parking only','Reserved for emergency vehicles','This space is only for vehicles with a valid Accessible Parking Permit','Loading zone'], correct:2, explanation:'Only vehicles displaying a valid Accessible Parking Permit may use this space.' },
+  { id:35, image:'/signs/ontario/slow_traffic_keep_right.png', question:'What does this sign mean?', choices:['All traffic must keep right','Slow traffic on multi-lane roads must keep right','Right lane closed ahead','Lane ends merge left'], correct:1, explanation:'Slow-moving vehicles must use the right lane on multi-lane roads.' },
+  { id:36, image:'/signs/ontario/hov_lane.png',                question:'What does this sign mean?', choices:['Any vehicle may use this lane','This lane is only for buses','Only vehicles with 2 or more occupants may use this lane','HOV lane ends ahead'], correct:2, explanation:'High Occupancy Vehicle lanes are reserved for vehicles with the minimum number of passengers shown.' },
+  { id:37, image:'/signs/ontario/one_way_left.png',            question:'What does this sign mean?', choices:['Two-way traffic','Keep left','One way — traffic flows to the left only','Road narrows left'],                             correct:2, explanation:'One way signs mean all traffic moves in the single direction shown by the arrow.' },
+  { id:38, image:'/signs/ontario/keep_right_divide.png',       question:'What does this sign mean?', choices:['Stay in current lane','Keep to the right side of the traffic island or divider','Lane closed on right','No right turns'],correct:1, explanation:'The keep right sign tells drivers to pass to the right of a traffic island or obstruction.' },
+  { id:39, image:'/signs/ontario/speed_limit_ahead.png',       question:'What does this sign mean?', choices:['Speed limit ends here','Speed limit zone begins','Speed limit changes ahead — be prepared','Reduced speed zone'],         correct:2, explanation:'This sign warns you that the posted speed limit is about to change. Prepare to adjust your speed.' },
+  { id:40, image:'/signs/ontario/do_not_enter.png',            question:'What does this sign mean?', choices:['One-way street ahead','Do not enter this road from your direction','Road closed for construction','Yield to oncoming traffic'], correct:1, explanation:'The do not enter sign means you cannot enter this road from your direction.' },
+  { id:41, image:'/signs/ontario/winding_road.png',            question:'What does this sign mean?', choices:['One curve ahead','Sharp turn ahead','Road has several curves ahead — drive carefully','Detour ahead'],                    correct:2, explanation:'A winding road sign warns that the road has a series of curves ahead. Reduce speed and drive carefully.' },
+  { id:42, image:'/signs/ontario/hidden_school_bus.png',       question:'What does this sign mean?', choices:['School zone ahead','You are approaching a hidden school bus stop — slow down and watch for children','School bus parking area','No school buses'], correct:1, explanation:'This sign warns of a hidden school bus stop where the bus may not be visible. Slow down.' },
+  { id:43, image:'/signs/ontario/bicycle_crossing.png',        question:'What does this sign mean?', choices:['Bicycle lane begins','Cyclists must stop here','Bicycles crossing the road ahead — watch for cyclists','Bicycle route ends'], correct:2, explanation:'This warning sign tells drivers that cyclists may be crossing the road ahead.' },
+  { id:44, image:'/signs/ontario/slippery_when_wet.png',       question:'What does this sign mean?', choices:['Road under construction','Gravel surface ahead','Pavement is slippery when wet — slow down','Road floods in rain'],       correct:2, explanation:'This sign warns that the road surface becomes dangerous when wet. Reduce speed in wet conditions.' },
+  { id:45, image:'/signs/ontario/stop_ahead.png',              question:'What does this sign mean?', choices:['Yield sign ahead','Traffic lights ahead','Slow down — a stop sign is ahead','Road closed ahead'],                        correct:2, explanation:'This warning sign tells you a stop sign is coming up. Begin slowing down now.' },
+  { id:46, image:'/signs/ontario/divided_highway_begins.png',  question:'What does this sign mean?', choices:['Divided highway begins ahead — keep right','Road narrows ahead','Highway entrance ramp','Passing lane begins'],            correct:0, explanation:'This sign warns that a divided highway with a median is beginning. Keep to the right-hand road.' },
+  { id:47, image:'/signs/ontario/right_lane_ends.png',         question:'What does this sign mean?', choices:['Keep right','Right lane ends ahead — merge left safely','Road narrows on right','Exit ramp ahead on right'],              correct:1, explanation:'This sign warns that the right lane is ending. Drivers in the right lane must safely merge left.' },
+  { id:48, image:'/signs/ontario/roundabout_ahead.png',        question:'What does this sign mean?', choices:['Traffic circle closed ahead','Reduce speed — roundabout ahead — traffic flows counter-clockwise','Yield sign ahead','U-turn permitted here'], correct:1, explanation:'This sign warns that a roundabout is ahead. Reduce speed and yield to traffic already in the roundabout.' },
+  { id:49, image:'/signs/ontario/narrow_bridge.png',           question:'What does this sign mean?', choices:['Low bridge ahead','Weight limit on bridge ahead','Narrow bridge ahead — may not accommodate two vehicles side by side','Bridge under construction'], correct:2, explanation:'This sign warns that the bridge ahead is narrower than the road. Use caution.' },
+  { id:50, image:'/signs/ontario/share_road.png',              question:'What does this sign mean?', choices:['Bicycle lane begins','Cyclists must use the sidewalk','Road is shared — provide safe space for cyclists','No vehicles allowed'], correct:2, explanation:'This sign warns that cyclists and vehicles share the road ahead. Give cyclists safe space.' },
+  { id:51, image:'/signs/ontario/road_work_ahead.png',         question:'What does this sign mean?', choices:['Road closed permanently','Slow down — road work zone ahead','Detour begins here','Construction completed'],               correct:1, explanation:'This orange sign warns of road work ahead. Slow down and watch for workers and equipment.' },
+  { id:52, image:'/signs/ontario/construction_zone.png',       question:'What does this sign mean?', choices:['Road closed — find alternate route','You are entering a construction zone — drive with extra caution','Construction zone ends','Workers not present'], correct:1, explanation:'Orange construction zone signs warn you to reduce speed and drive carefully. Fines are doubled when workers are present.' },
+  { id:53, image:'/signs/ontario/detour.png',                  question:'What does this sign mean?', choices:['Road work complete — resume normal route','Temporary detour from normal traffic route','No through traffic','Road closed ahead'], correct:1, explanation:'Orange detour signs guide you around a road closure. Follow them until you return to your normal route.' },
+  { id:54, image:'/signs/ontario/lane_closed.png',             question:'What does this sign mean?', choices:['Pass the closed lane quickly','Merge with traffic in the open lane — lane ahead is closed for roadwork','Road closed — turn around','Keep in current lane'], correct:1, explanation:'This sign warns that a lane is closed ahead due to road work. Safely merge into the open lane.' },
+  { id:55, image:'/signs/ontario/flagger_ahead.png',           question:'What does this sign mean?', choices:['Traffic lights ahead','Speed up to clear the construction zone','Traffic control person ahead — drive slowly and follow instructions','Construction zone ends'], correct:2, explanation:'This sign warns that a person is controlling traffic ahead. Slow down and follow all directions.' },
+  { id:56, image:'/signs/ontario/construction_1km_ahead.png',  question:'What does this sign mean?', choices:['Road closed 1 km ahead','Road work begins in 1 kilometre — reduce speed and prepare','Detour in 1 km','Speed limit reduces to 1 km/h'], correct:1, explanation:'This orange sign warns that a construction zone begins 1 kilometre ahead. Slow down and be prepared.' },
+  { id:57, image:'/signs/ontario/no_right_on_red.png',         question:'What does this sign mean?', choices:['No right turn at any time','No right turn permitted when facing a red light at this intersection','Right turn on red permitted with caution','Stop before turning right on red'], correct:1, explanation:'This sign prohibits right turns when the traffic light is red at that specific intersection.' },
+  { id:58, image:'/signs/ontario/no_stopping_zone.png',        question:'What does this sign mean?', choices:['No parking between the signs','No standing — passengers may exit only','You must not stop your vehicle even for a moment between these signs','Tow away zone during rush hour'], correct:2, explanation:'No stopping means you cannot stop your vehicle at any time in this area — not even for a moment.' },
+  { id:59, image:'/signs/ontario/community_safety_zone.png',   question:'What does this sign mean?', choices:['School zone with reduced speed','Hospital area — drive with caution','Special community zone where traffic fines are increased for violations','Construction workers present'], correct:2, explanation:'Community Safety Zones identify areas with special risk to pedestrians. Traffic fines are increased for violations.' },
+  { id:60, image:'/signs/ontario/snowmobiles_permitted.png',   question:'What does this sign mean?', choices:['No snowmobiles allowed on this road','Snowmobile crossing ahead','Snowmobiles may use this road','Winter road conditions ahead'], correct:2, explanation:'This regulatory sign indicates that snowmobiles are permitted to use this road.' },
+  { id:61, image:'/signs/ontario/parking_permitted.png',       question:'What does this sign mean?', choices:['No parking at any time','Parking is prohibited except for permit holders','You may park in this area between the signs during the posted times','Free parking zone'], correct:2, explanation:'This sign indicates that parking is permitted in the area between paired signs during the hours shown.' },
+  { id:62, image:'/signs/ontario/flashing_arrow.png',          question:'What does this sign mean?', choices:['Lane closed ahead — merge now','Road work zone begins','Flashing lights on arrows show the direction traffic must follow','Emergency vehicle approaching'], correct:2, explanation:'Flashing arrow boards in construction zones direct traffic to move in the indicated direction. Always follow the arrows.' },
 ];
 
 // ── Ontario M1 Motorcycle — 60 questions ─────────────────────
@@ -2038,6 +2038,505 @@ const FOOD_HANDLER_QUESTIONS_FULL = [
   },
 ];
 
+// ── BC ICBC Road Signs — 23 questions ────────────────────────
+const BC_SIGNS_QUESTIONS = [
+  {
+    id: 1,
+    image: '/signs/bc/no_right_turn.png',
+    question: 'This sign means',
+    choices: [
+      'no right turn from this lane ahead',
+      'the road ends ahead; turn right',
+      'no right turn at this intersection',
+      'right turn only at this intersection',
+    ],
+    correct: 2,
+    explanation: 'The red circle with a right-turn arrow means no right turn is permitted at this intersection.',
+  },
+  {
+    id: 2,
+    image: '/signs/bc/pedestrian_crosswalk_flash.png',
+    question: 'This sign means',
+    choices: [
+      'pedestrian controlled crosswalk; if light is solid be prepared to stop',
+      'pedestrian has the right of way at all times',
+      'proceed quickly before pedestrians start to walk',
+      'pedestrian controlled crosswalk; if light is flashing be prepared to stop',
+    ],
+    correct: 3,
+    explanation: 'This sign indicates a pedestrian-controlled crosswalk. When the amber light is flashing, be prepared to stop for pedestrians.',
+  },
+  {
+    id: 3,
+    image: '/signs/bc/hidden_intersection.png',
+    question: 'This sign means',
+    choices: [
+      'low overpass ahead',
+      'railroad crossing ahead',
+      'hidden intersection or side road ahead',
+      'dead end ahead; turn right or left',
+    ],
+    correct: 2,
+    explanation: 'This yellow diamond sign with a "+" symbol warns of a hidden intersection or side road ahead that may not be visible.',
+  },
+  {
+    id: 4,
+    image: '/signs/bc/two_way_left_turn.png',
+    question: 'This sign means',
+    choices: [
+      'left turns only at this intersection',
+      'this lane must turn left or right ahead',
+      'two-way left turn lane',
+      'all traffic must turn left ahead',
+    ],
+    correct: 2,
+    explanation: 'The black square with two curved arrows marks a two-way left turn lane — a shared centre lane used by vehicles from both directions to turn left.',
+  },
+  {
+    id: 5,
+    image: '/signs/bc/school_zone_30.png',
+    question: 'When must you observe this speed limit?',
+    choices: [
+      'At all times on regular school days',
+      '8 a.m. to 5 p.m. every day',
+      'At all times',
+      '8 a.m. to 5 p.m. on regular school days',
+    ],
+    correct: 3,
+    explanation: 'The 30 km/h school zone speed limit applies from 8 a.m. to 5 p.m. on regular school days only.',
+  },
+  {
+    id: 6,
+    image: '/signs/bc/playground.png',
+    question: 'This sign means',
+    choices: [
+      'playground area nearby; drive with caution',
+      'slow to 30 km/h every day from dawn to dusk',
+      'playground crosswalk; stop for pedestrians',
+      'slow to 30 km/h from 8 am to 5 p.m. on school days',
+    ],
+    correct: 0,
+    explanation: 'The yellow diamond with a running child warns that a playground area is nearby. Drive with caution and watch for children.',
+  },
+  {
+    id: 7,
+    image: '/signs/bc/hazard_ahead.png',
+    question: 'This sign means',
+    choices: [
+      'park on either the left or the right',
+      'right and left turns allowed',
+      'hazard ahead, slow down and proceed in the direction of the arrows',
+      'detour, construction ahead',
+    ],
+    correct: 2,
+    explanation: 'The yellow/black checkered diamond with arrows warns of a hazard ahead. Slow down and proceed in the direction the arrows indicate.',
+  },
+  {
+    id: 8,
+    image: '/signs/bc/steady_yellow_light.png',
+    question: 'A steady yellow light means',
+    choices: [
+      'you may proceed if the intersection is clear',
+      'stop unless it is unsafe to do so',
+      'slow down and proceed with caution',
+      'stop and proceed when safe',
+    ],
+    correct: 1,
+    explanation: 'A steady yellow (amber) light means the signal is about to turn red. Stop if it is safe to do so — do not speed up to beat the light.',
+  },
+  {
+    id: 9,
+    image: '/signs/bc/flashing_green_arrow_red.png',
+    question: 'A flashing green arrow with a steady red light means',
+    choices: [
+      'no left turn at any time',
+      'wait until the red turns green before turning left',
+      'turn left',
+      'the cross-street is a one way street in the direction of the arrow',
+    ],
+    correct: 2,
+    explanation: 'A flashing green arrow with a steady red light is a protected left-turn signal — you may turn left. Oncoming traffic is stopped by the red light.',
+  },
+  {
+    id: 10,
+    image: '/signs/bc/traffic_control_person.png',
+    question: 'Directions given by a traffic control person',
+    choices: [
+      'should not be obeyed on public roads',
+      'do not over-ride the regular rules of the road',
+      'must be obeyed in all cases',
+      'must be obeyed if they do not conflict with the rules of the road',
+    ],
+    correct: 2,
+    explanation: 'Directions given by a traffic control person (flagger) must be obeyed in all cases, even when they differ from regular traffic signals or rules.',
+  },
+  {
+    id: 11,
+    image: '/signs/bc/do_not_enter.png',
+    question: 'This sign means',
+    choices: [
+      'no U-turns',
+      'do not enter',
+      'the road ends ahead',
+      'divided road ahead',
+    ],
+    correct: 1,
+    explanation: 'The red circle with a white horizontal bar is the "Do Not Enter" sign — you must not enter this road from your direction of travel.',
+  },
+  {
+    id: 12,
+    image: '/signs/bc/solid_line_car.png',
+    question: 'This car may',
+    choices: [
+      'not turn left over the line',
+      'pass with caution',
+      'pass on the right',
+      'not pass',
+    ],
+    correct: 3,
+    explanation: 'A solid centre line beside your vehicle means you may not pass other vehicles. Do not cross a solid line to pass.',
+  },
+  {
+    id: 13,
+    image: '/signs/bc/obstruction_keep_right.png',
+    question: 'This sign means',
+    choices: [
+      'the road curves to the right',
+      'obstruction, keep left',
+      'one way street; travel only on the right',
+      'obstruction, keep right',
+    ],
+    correct: 3,
+    explanation: 'The yellow and black diagonal stripe marker (stripes running up to the right) indicates an obstruction — keep to the right of it.',
+  },
+  {
+    id: 14,
+    image: '/signs/bc/steady_green_arrow.png',
+    question: 'A steady green arrow means',
+    choices: [
+      'you may turn in the direction of the arrow after coming to a complete stop',
+      'you may only turn left at this intersection',
+      'the cross-street is a one way street in the direction of the arrow',
+      'you may turn in the direction of the arrow if the intersection is clear',
+    ],
+    correct: 3,
+    explanation: 'A steady green arrow is a protected signal — you may turn in the direction indicated if the intersection is clear.',
+  },
+  {
+    id: 15,
+    image: '/signs/bc/flashing_red_light.png',
+    question: 'A flashing red light means',
+    choices: [
+      'stop, the light is pedestrian controlled',
+      'stop and wait for a green',
+      'stop and move on only if you are turning right',
+      'stop and proceed when it is safe to do so',
+    ],
+    correct: 3,
+    explanation: 'A flashing red light means treat it like a stop sign — come to a complete stop, then proceed when it is safe to do so.',
+  },
+  {
+    id: 16,
+    image: '/signs/bc/school_zone_sign.png',
+    question: 'This sign means',
+    choices: [
+      'school crossing ahead',
+      'school zone, reduce speed to 30 km/h',
+      'school zone: watch for children/pedestrians nearby',
+      'pedestrian crossing ahead',
+    ],
+    correct: 2,
+    explanation: 'The yellow pentagon with two children silhouettes is the school zone sign — watch for children and pedestrians in this area.',
+  },
+  {
+    id: 17,
+    image: '/signs/bc/flashing_green_light.png',
+    question: 'A flashing green light means',
+    choices: [
+      'opposing traffic is facing a red light',
+      'the traffic signals are controlled by pedestrians',
+      'the light is about to change to red',
+      'you may drive in the lane below the light',
+    ],
+    correct: 1,
+    explanation: 'In BC, a flashing green light means the intersection is pedestrian-controlled. A pedestrian can press a button to stop traffic and cross safely.',
+  },
+  {
+    id: 18,
+    image: '/signs/bc/yield_sign.png',
+    question: 'This sign means',
+    choices: [
+      'you have the right of way',
+      'yield the right of way to other traffic',
+      'this vehicle is disabled',
+      'this vehicle is moving slowly',
+    ],
+    correct: 1,
+    explanation: 'The red inverted triangle yield sign means you must slow down and give the right of way to all other traffic before proceeding.',
+  },
+  {
+    id: 19,
+    image: '/signs/bc/no_right_turn.png',
+    question: 'This sign means',
+    choices: [
+      'no right turn from this lane ahead',
+      'the road ends ahead; turn right',
+      'no right turn at this intersection',
+      'right turn only at this intersection',
+    ],
+    correct: 2,
+    explanation: 'The no right turn sign prohibits turning right at this specific intersection.',
+  },
+  {
+    id: 20,
+    image: '/signs/bc/two_way_left_turn.png',
+    question: 'This sign means',
+    choices: [
+      'this lane must turn left or right ahead',
+      'two-way left turn lane',
+      'all traffic must turn left ahead',
+      'left turns only at this intersection',
+    ],
+    correct: 1,
+    explanation: 'The two-way left turn lane sign marks a shared centre lane that vehicles from both directions may use to turn left.',
+  },
+  {
+    id: 21,
+    image: '/signs/bc/pedestrian_crosswalk_flash.png',
+    question: 'This sign means',
+    choices: [
+      'pedestrian controlled crosswalk; if light is flashing be prepared to stop',
+      'pedestrian controlled crosswalk; if light is solid be prepared to stop',
+      'proceed quickly before pedestrians start to walk',
+      'pedestrian has the right of way at all times',
+    ],
+    correct: 0,
+    explanation: 'A flashing amber light at a pedestrian crosswalk means be prepared to stop — a pedestrian has pressed the button to cross.',
+  },
+  {
+    id: 22,
+    image: '/signs/bc/hidden_intersection.png',
+    question: 'This sign means',
+    choices: [
+      'low overpass ahead',
+      'hidden intersection or side road ahead',
+      'railroad crossing ahead',
+      'dead end ahead',
+    ],
+    correct: 1,
+    explanation: 'This yellow diamond sign warns of a hidden intersection or side road that may not be visible until you are close to it.',
+  },
+  {
+    id: 23,
+    image: '/signs/bc/school_zone_30.png',
+    question: 'When must you observe this speed limit?',
+    choices: [
+      'At all times',
+      '8 a.m. to 5 p.m. every day',
+      'At all times on regular school days',
+      '8 a.m. to 5 p.m. on regular school days',
+    ],
+    correct: 3,
+    explanation: 'The 30 km/h school zone speed limit applies from 8 a.m. to 5 p.m. on regular school days only — not weekends or holidays.',
+  },
+
+  {
+    id: 24,
+    image: '/signs/bc/steady_green_light.png',
+    question: 'A steady green light means',
+    choices: [
+      'you may proceed if the intersection is clear',
+      'turns are allowed at this intersection',
+      'you may drive in this lane',
+      'slow down and proceed with caution',
+    ],
+    correct: 0,
+    explanation: 'A steady green light means you may proceed through the intersection if it is clear. You must still yield to pedestrians and vehicles already in the intersection.',
+  },
+  {
+    id: 25,
+    image: '/signs/bc/hidden_intersection.png',
+    question: 'This sign means',
+    choices: [
+      'low overpass ahead',
+      'hidden intersection or side road ahead',
+      'dead end ahead; turn right or left',
+      'railroad crossing ahead',
+    ],
+    correct: 1,
+    explanation: 'This yellow diamond sign warns of a hidden intersection or side road that may not be visible until you are close to it.',
+  },
+  {
+    id: 26,
+    image: '/signs/bc/dashed_yellow_line_car.png',
+    question: 'This car may',
+    choices: [
+      'pass on the right',
+      'not pass',
+      'not turn left over the line',
+      'pass with caution',
+    ],
+    correct: 3,
+    explanation: 'A broken yellow centre line means passing is permitted when it is safe to do so — pass with caution when the way is clear.',
+  },
+  {
+    id: 27,
+    image: '/signs/bc/right_lane_ends.png',
+    question: 'This sign means',
+    choices: [
+      'merge right ahead',
+      'narrow structure ahead',
+      'two-way traffic ahead',
+      'right lane ends ahead',
+    ],
+    correct: 3,
+    explanation: 'This yellow diamond sign warns that the right lane is ending ahead. Drivers in the right lane must safely merge left.',
+  },
+  {
+    id: 28,
+    image: '/signs/bc/truck_crossing.png',
+    question: 'This sign means',
+    choices: [
+      'there is a truck entrance or crossing ahead',
+      'drivers should watch for speeding trucks',
+      'trucks not allowed',
+      'trucks are allowed only in passing lanes',
+    ],
+    correct: 0,
+    explanation: 'This yellow diamond sign with a truck warns that there is a truck entrance or crossing ahead. Slow down and watch for trucks entering or crossing the road.',
+  },
+  {
+    id: 29,
+    image: '/signs/bc/slippery_road.png',
+    question: 'This sign means',
+    choices: [
+      'reverse curve ahead',
+      'winding road ahead',
+      'be prepared for sudden stops ahead',
+      'the road is slippery when wet',
+    ],
+    correct: 3,
+    explanation: 'The skidding car on a yellow diamond warns that the road surface becomes slippery when wet. Reduce speed and increase following distance in wet conditions.',
+  },
+  {
+    id: 30,
+    image: '/signs/bc/two_way_left_turn_diagram.png',
+    question: 'The centre lane in this diagram',
+    choices: [
+      'may be used for a left turn from either direction',
+      'indicates turns ahead',
+      'may be used as a regular traffic lane',
+      'should not be driven on',
+    ],
+    correct: 0,
+    explanation: 'The centre lane marked with yellow dashed lines on both sides is a two-way left turn lane — vehicles travelling in either direction may use it to turn left.',
+  },
+  {
+    id: 31,
+    image: '/signs/bc/flashing_red_light.png',
+    question: 'When you arrive at an intersection with a flashing red light, you must',
+    choices: [
+      'slow down and yield the right of way',
+      'stop as you would at a stop sign',
+      'wait until the light turns green',
+      'slow down and proceed with caution',
+    ],
+    correct: 1,
+    explanation: 'A flashing red light must be treated exactly like a stop sign — come to a complete stop, yield to all traffic and pedestrians, then proceed when safe.',
+  },
+  {
+    id: 32,
+    image: '/signs/bc/lane_signal_red_x_green_arrow.png',
+    question: 'This signal over a lane means',
+    choices: [
+      'do not drive in this lane',
+      'this lane ends ahead; move out of the lane',
+      'this lane is under construction',
+      'this lane is about to become available to traffic',
+    ],
+    correct: 1,
+    explanation: 'A flashing red X with a green arrow over a lane means the lane you are in is ending — move into the lane indicated by the green arrow immediately.',
+  },
+  {
+    id: 33,
+    image: '/signs/bc/steady_red_light.png',
+    question: 'A steady red light means',
+    choices: [
+      'stop, then proceed when safe',
+      'stop, except if turning right',
+      'stop before the intersection',
+      'stop if traffic is approaching',
+    ],
+    correct: 2,
+    explanation: 'A steady red light means you must stop before the intersection and remain stopped until the light changes. You may turn right on red after a full stop unless a sign prohibits it.',
+  },
+  {
+    id: 34,
+    image: '/signs/bc/stop_sign_ahead.png',
+    question: 'This sign means',
+    choices: [
+      'stop, except if turning right',
+      'stop sign ahead; prepare to stop',
+      'stop, then proceed when safe',
+      'stop if traffic is approaching',
+    ],
+    correct: 1,
+    explanation: 'The yellow diamond with a stop sign symbol warns that a stop sign is coming up ahead. Begin slowing down and prepare to stop.',
+  },
+  {
+    id: 35,
+    image: '/signs/bc/flashing_yellow_light.png',
+    question: 'A flashing yellow traffic light means',
+    choices: [
+      'stop and proceed when the way is clear',
+      'slow down and be prepared to stop',
+      'stop and wait for the light to change to green',
+      'the light is about to change to red',
+    ],
+    correct: 1,
+    explanation: 'A flashing yellow light means slow down and be prepared to stop — it is a caution signal, not a stop signal.',
+  },
+  {
+    id: 36,
+    image: '/signs/bc/straight_ahead_only.png',
+    question: 'This sign means',
+    choices: [
+      'no lane changes permitted ahead',
+      'no turns permitted at this intersection',
+      'one way traffic ahead',
+      'you have the right of way',
+    ],
+    correct: 1,
+    explanation: 'The green circle with an upward arrow means you must go straight — no turns are permitted at this intersection.',
+  },
+  {
+    id: 37,
+    image: '/signs/bc/construction_speed_50.png',
+    question: 'This sign means',
+    choices: [
+      'crew and equipment are working and you must obey the speed sign',
+      'there is an obstruction ahead',
+      'you must obey the speed sign if you can see workmen on the road',
+      'crew and equipment are working and you must obey the speed sign during daylight hours',
+    ],
+    correct: 0,
+    explanation: 'The orange construction sign with a worker figure and maximum 50 km/h means crew and equipment are present — you must obey the posted speed limit at all times in this zone.',
+  },
+  {
+    id: 38,
+    image: '/signs/bc/traffic_merging.png',
+    question: 'This sign means',
+    choices: [
+      'lane narrows ahead',
+      'concealed intersection ahead',
+      'intersection ahead',
+      'traffic merging ahead',
+    ],
+    correct: 3,
+    explanation: 'The yellow diamond with a merging arrow warns that traffic from another lane or road will be merging ahead. Be prepared to adjust your speed and position.',
+  },
+];
+
 // ── BC ICBC Knowledge Test — 40 Questions ────────────────────
 const BC_QUESTIONS = [
   { id:1,  question:'What is the speed limit in a school zone in British Columbia?', choices:['30 km/h','40 km/h','50 km/h','60 km/h'], correct:1, explanation:'The speed limit in a BC school zone is 40 km/h when children are present (8 am to 5 pm on school days).' },
@@ -2125,6 +2624,7 @@ const ALL_QUESTIONS = {
   'citizenship':      CITIZENSHIP_QUESTIONS_FULL.slice(0, 5),
   'food-handler':     FOOD_HANDLER_QUESTIONS_FULL.slice(0, 5),
   'whmis':            WHMIS_QUESTIONS.slice(0, 5),
+  'bc-knowledge-signs': BC_SIGNS_QUESTIONS.slice(0, 5),
 };
 
 const TEST_NAMES = {
@@ -2133,6 +2633,7 @@ const TEST_NAMES = {
   'ontario-m1':       'Ontario M1 Motorcycle Test',
   'ontario-az':       'Ontario AZ Truck Licence',
   'bc-knowledge':     'BC ICBC Knowledge Test',
+  'bc-knowledge-signs': 'BC ICBC — Road Signs',
   'alberta-class5':   'Alberta Class 5 Knowledge',
   'citizenship':      'Canadian Citizenship Test',
   'food-handler':     'Food Handler Certificate',
@@ -2149,6 +2650,7 @@ const HEADER_COLORS = {
   'citizenship':      '#DC2626',
   'food-handler':     '#D97706',
   'whmis':            '#DC2626',
+  'bc-knowledge-signs': '#065F46',
 };
 
 export default function QuizPage() {
@@ -2158,7 +2660,7 @@ export default function QuizPage() {
 
   const testName    = TEST_NAMES[testSlug]  || 'Practice Test';
   const headerColor = HEADER_COLORS[testSlug] || '#1E3A5F';
-  const isSigns     = testSlug === 'ontario-g1-signs';
+  const isSigns     = testSlug === 'ontario-g1-signs'|| testSlug === 'bc-knowledge-signs';
 
   // ── ALL state declarations first ──────────────────────────
   const [current,      setCurrent]     = useState(0);
@@ -2167,12 +2669,15 @@ export default function QuizPage() {
   const [answers,      setAnswers]     = useState([]);
   const [finished,     setFinished]    = useState(false);
   const [timeLeft,     setTimeLeft]    = useState(300);
-  const [isPurchased,  setIsPurchased] = useState(false);
 
-  useEffect(() => {
-    const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
-    setIsPurchased(purchases.includes(testSlug));
-  }, [testSlug]);
+
+ const [isPurchased] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
+      return purchases.includes(params.testSlug);
+    } catch { return false; }
+  });
 
   // ── THEN questions (now isPurchased exists) ───────────────
   const allFull = {
@@ -2181,6 +2686,7 @@ export default function QuizPage() {
     'ontario-m1':       M1_QUESTIONS,
     'ontario-az':       AZ_QUESTIONS,
     'bc-knowledge':     BC_QUESTIONS,
+    'bc-knowledge-signs': BC_SIGNS_QUESTIONS,  // now 38 questions
     'alberta-class5':   ALBERTA_QUESTIONS,
     'citizenship':      CITIZENSHIP_QUESTIONS_FULL,
     'food-handler':     FOOD_HANDLER_QUESTIONS_FULL,
@@ -2203,7 +2709,7 @@ export default function QuizPage() {
     return () => clearInterval(timerRef.current);
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
     if (!finished) return;
     const score = answers.filter(a => a.isCorrect).length;
     const total = questions.length;
@@ -2213,6 +2719,7 @@ export default function QuizPage() {
       '&total=' + total +
       '&name=' + encodeURIComponent(testName)
     );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finished]);
 
   const mins = Math.floor(timeLeft / 60);
@@ -2380,11 +2887,13 @@ export default function QuizPage() {
             🔒 Free trial — {questions.length} questions only
           </p>
           <p style={{ margin: '0 0 14px', opacity: 0.8, fontSize: '0.9rem' }}>
-            {isSigns
-              ? 'Unlock all 62 Ontario road sign questions with images for just $7.99 CAD'
-              : testSlug === 'ontario-m1'
-              ? 'Unlock all 60 M1 motorcycle questions for just $7.99 CAD'
-              : 'Unlock 200+ questions, progress tracking and exam simulation'}
+          {testSlug === 'ontario-g1-signs'
+           ? 'Unlock all 62 Ontario road sign questions with images for just $7.99 CAD'
+           : testSlug === 'bc-knowledge-signs'
+          ? 'Unlock all 38 BC ICBC road sign questions with images for just $7.99 CAD'
+           : testSlug === 'ontario-m1'
+           ? 'Unlock all 60 M1 motorcycle questions for just $7.99 CAD'
+           : 'Unlock 200+ questions, progress tracking and exam simulation'}
           </p>
           <Link href="/pricing" style={{
             background: '#F0C040', color: '#1E3A5F', padding: '10px 28px',
