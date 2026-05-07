@@ -2055,7 +2055,7 @@ const BC_SIGNS_QUESTIONS = [
   },
   {
     id: 2,
-    image: '/signs/bc/pedestrian_crosswalk_flash.png',
+    image: '/signs/bc/flashing_yellow_light.png',
     question: 'This sign means',
     choices: [
       'pedestrian controlled crosswalk; if light is solid be prepared to stop',
@@ -2185,7 +2185,7 @@ const BC_SIGNS_QUESTIONS = [
   },
   {
     id: 12,
-    image: '/signs/bc/solid_line_car.png',
+    image: '/signs/bc/dashed_yellow_line_car.png',
     question: 'This car may',
     choices: [
       'not turn left over the line',
