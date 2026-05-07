@@ -2613,6 +2613,29 @@ const FOOD_HANDLER_QUESTIONS = [
   { id:5, question:'What does FIFO stand for in food storage?', choices:['First In, First Out','Food In, Food Out','Fresh In, Fresh Out','First Inspection, Final Out'], correct:0, explanation:'FIFO means First In, First Out — older products should be used before newer ones.' },
 ];
 
+// ── Ontario G1 Arabic — General Rules ─────────────────────
+const ARABIC_GENERAL_QUESTIONS = [
+  { id:1,  question:'ما هو الحد الأقصى للسرعة على الطرق السريعة في أونتاريو ما لم تُنشر لافتة أخرى؟', choices:['110 كم/س','100 كم/س','90 كم/س','120 كم/س'], correct:1, explanation:'الحد الأقصى الافتراضي على الطرق السريعة في أونتاريو هو 100 كم/س ما لم تشر لافتة إلى خلاف ذلك.' },
+  { id:2,  question:'كم المسافة قبل الانعطاف التي يجب أن تُشير فيها في المنطقة السكنية؟', choices:['15 متراً','50 متراً','30 متراً','100 متر'], correct:2, explanation:'يجب أن تُشير قبل 30 متراً على الأقل من الانعطاف في المناطق السكنية أو التجارية.' },
+  { id:3,  question:'ماذا يجب أن تفعل عند الوصول إلى لافتة STOP (قف)؟', choices:['أبطئ وتحقق من حركة المرور','قف فقط إذا كان هناك مشاة','توقف توقفاً تاماً قبل خط التوقف','أعطِ الأولوية للمركبات على يمينك'], correct:2, explanation:'يجب أن تتوقف توقفاً تاماً قبل خط التوقف أو ممر المشاة أو حافة التقاطع.' },
+  { id:4,  question:'ما هو حد السرعة في المنطقة المدرسية في أونتاريو؟', choices:['50 كم/س','60 كم/س','40 كم/س','30 كم/س'], correct:2, explanation:'الحد الأقصى للسرعة في المنطقة المدرسية هو 40 كم/س عندما يكون الأطفال موجودين.' },
+  { id:5,  question:'متى يجب أن تتوقف لحافلة مدرسية تضيء مصابيحها الحمراء على طريق غير مقسّم؟', choices:['فقط إذا كان الأطفال مرئيين','فقط خلال ساعات المدرسة','دائماً — من كلا الاتجاهين','فقط إذا اقتربت من الأمام'], correct:2, explanation:'على الطريق غير المقسّم، يجب على جميع المركبات من كلا الاتجاهين التوقف عندما تضيء الحافلة المدرسية مصابيحها الحمراء.' },
+  { id:6,  question:'ما هو حد الكحول في الدم للسائق المبتدئ (G1 أو G2)؟', choices:['0.05%','0.08%','0.00% — صفر تسامح','0.03%'], correct:2, explanation:'يجب أن يكون مستوى الكحول في دم السائقين المبتدئين (G1 وG2) صفراً تماماً. أي كمية من الكحول تُعدّ مخالفة.' },
+  { id:7,  question:'ما هي المسافة الزمنية الدنيا للمتابعة على الطريق السريع؟', choices:['ثانية واحدة','ثانيتان','3 ثوانٍ','4 ثوانٍ'], correct:1, explanation:'المسافة الدنيا للمتابعة هي ثانيتان. زِدها إلى 4 ثوانٍ أو أكثر في حالات الطقس السيئ.' },
+  { id:8,  question:'متى يجب استخدام المصابيح الخافتة في الضباب؟', choices:['استخدم المصابيح العالية دائماً','استخدم المصابيح الخافتة — المصابيح العالية تنعكس على الضباب','استخدم أضواء الطوارئ فقط','لا حاجة لمصابيح في النهار'], correct:1, explanation:'استخدم المصابيح الخافتة في الضباب. المصابيح العالية تنعكس على جزيئات الضباب وتقلل الرؤية.' },
+  { id:9,  question:'يجب أن يُرافق سائق G1 شخصٌ حاصل على رخصة قيادة كاملة منذ كم سنة على الأقل؟', choices:['سنتان','3 سنوات','4 سنوات','5 سنوات'], correct:2, explanation:'يجب أن يُرافق سائق G1 شخص حاصل على رخصة قيادة كاملة منذ 4 سنوات على الأقل.' },
+  { id:10, question:'ماذا يعني الضوء الأخضر الوامض عند التقاطع؟', choices:['تابع بحذر — الضوء على وشك التغيير','لديك ضوء أخضر متقدم — تابع مباشرة أو انعطف','المركبات المنعطفة يساراً فقط يمكنها التابعة','أسرع قبل تغيير الضوء'], correct:1, explanation:'الضوء الأخضر الوامض يعني أن لديك الأولوية للسير في أي اتجاه.' },
+];
+
+// ── Ontario G1 Arabic — Road Signs ────────────────────────
+const ARABIC_SIGNS_QUESTIONS = [
+  { id:1,  image:'/signs/ontario/stop.png',               question:'ماذا تعني هذه اللافتة؟', choices:['أعطِ الأولوية للمرور المتقاطع','توقف توقفاً تاماً','أبطئ وتابع','لا دخول'], correct:1, explanation:'لافتة STOP المثمنة الحمراء تعني وجوب التوقف التام في كل مرة.' },
+  { id:2,  image:'/signs/ontario/yield.png',              question:'ماذا تعني هذه اللافتة؟', choices:['توقف تماماً','أسرع للاندماج','أبطئ وأعطِ الأولوية للمرور في التقاطع','لا انعطاف بالاتجاه العكسي'], correct:2, explanation:'لافتة الإفساح تعني الإبطاء وإعطاء الأولوية للمرور الموجود في التقاطع بالفعل.' },
+  { id:3,  image:'/signs/ontario/school_zone.png',        question:'ماذا تعني هذه اللافتة؟', choices:['منطقة مستشفى','منطقة ملعب','منطقة مدرسية — انتبه للأطفال','ممر مشاة أمامك'], correct:2, explanation:'لافتة المنطقة المدرسية تحذر من وجود أطفال قد يعبرون. خفّض سرعتك إلى 40 كم/س عند وجود أطفال.' },
+  { id:4,  image:'/signs/ontario/no_entry.png',           question:'ماذا تعني هذه اللافتة؟', choices:['شارع باتجاه واحد أمامك','لا مرور مباشر — يجب الانعطاف','طريق مغلق','منطقة بناء أمامك'], correct:1, explanation:'هذه اللافتة تعني عدم السماح بالسير المباشر عبر التقاطع. يجب الانعطاف يساراً أو يميناً.' },
+  { id:5,  image:'/signs/ontario/speed_limit_50.png',     question:'ماذا تعني هذه اللافتة؟', choices:['الحد الأدنى للسرعة 50 كم/س','السرعة الموصى بها للمنعطف','نهاية منطقة الحد الأقصى للسرعة','الحد الأقصى للسرعة 50 كم/س'], correct:3, explanation:'لافتات الحد الأقصى للسرعة تُظهر أقصى سرعة قانونية في ظروف الطريق والطقس الطبيعية.' },
+];
+
 // ── Question routing ──────────────────────────────────────────
 const ALL_QUESTIONS = {
   'ontario-g1':       GENERAL_QUESTIONS,
@@ -2625,6 +2648,8 @@ const ALL_QUESTIONS = {
   'food-handler':     FOOD_HANDLER_QUESTIONS_FULL.slice(0, 5),
   'whmis':            WHMIS_QUESTIONS.slice(0, 5),
   'bc-knowledge-signs': BC_SIGNS_QUESTIONS.slice(0, 5),
+  'ontario-g1-arabic':       ARABIC_GENERAL_QUESTIONS.slice(0, 5),
+   'ontario-g1-signs-arabic': ARABIC_SIGNS_QUESTIONS.slice(0, 5),
 };
 
 const TEST_NAMES = {
@@ -2638,6 +2663,8 @@ const TEST_NAMES = {
   'citizenship':      'Canadian Citizenship Test',
   'food-handler':     'Food Handler Certificate',
   'whmis':            'WHMIS 2015 Certification',
+  'ontario-g1-arabic':       'اختبار G1 أونتاريو — القواعد العامة',
+  'ontario-g1-signs-arabic': 'اختبار G1 أونتاريو — إشارات الطريق',
 };
 
 const HEADER_COLORS = {
@@ -2651,6 +2678,8 @@ const HEADER_COLORS = {
   'food-handler':     '#D97706',
   'whmis':            '#DC2626',
   'bc-knowledge-signs': '#065F46',
+  'ontario-g1-arabic':       '#1E3A5F',
+  'ontario-g1-signs-arabic': '#DC2626',
 };
 
 export default function QuizPage() {
@@ -2661,6 +2690,7 @@ export default function QuizPage() {
   const testName    = TEST_NAMES[testSlug]  || 'Practice Test';
   const headerColor = HEADER_COLORS[testSlug] || '#1E3A5F';
   const isSigns     = testSlug === 'ontario-g1-signs'|| testSlug === 'bc-knowledge-signs';
+  const isArabic = testSlug?.includes('arabic');
 
   // ── ALL state declarations first ──────────────────────────
   const [current,      setCurrent]     = useState(0);
@@ -2671,13 +2701,17 @@ export default function QuizPage() {
   const [timeLeft,     setTimeLeft]    = useState(300);
 
 
- const [isPurchased] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    try {
-      const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
-      return purchases.includes(params.testSlug);
-    } catch { return false; }
-  });
+const [isPurchased] = useState(() => {
+  if (typeof window === 'undefined') return false;
+  try {
+    const purchases = JSON.parse(localStorage.getItem('purchases') || '[]');
+    // Arabic versions are a free bonus with ontario-g1 purchase
+    if (params.testSlug === 'ontario-g1-arabic' || params.testSlug === 'ontario-g1-signs-arabic') {
+      return purchases.includes('ontario-g1');
+    }
+    return purchases.includes(params.testSlug);
+  } catch { return false; }
+});
 
   // ── THEN questions (now isPurchased exists) ───────────────
   const allFull = {
@@ -2691,6 +2725,8 @@ export default function QuizPage() {
     'citizenship':      CITIZENSHIP_QUESTIONS_FULL,
     'food-handler':     FOOD_HANDLER_QUESTIONS_FULL,
     'whmis':            WHMIS_QUESTIONS,
+    'ontario-g1-arabic':       ARABIC_GENERAL_QUESTIONS,
+    'ontario-g1-signs-arabic': ARABIC_SIGNS_QUESTIONS,
   };
   const questions = isPurchased
     ? (allFull[testSlug] || GENERAL_QUESTIONS)
@@ -2770,7 +2806,7 @@ useEffect(() => {
   const progress = ((current + 1) / questions.length) * 100;
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', minHeight: '100vh', background: '#F8FAFF' }}>
+    <div style={{ fontFamily: 'system-ui, sans-serif', minHeight: '100vh', background: '#F8FAFF' }} dir={isArabic ? 'rtl' : 'ltr'}>
 
       {/* Top bar */}
       <div style={{

@@ -259,11 +259,16 @@ export default function PricingPage() {
                   borderTop: `4px solid ${CATEGORY_COLORS[test.category]}`,
                   position: 'relative'
                 }}>
-                  {test.popular && (
-                    <span style={{ position: 'absolute', top: '16px', right: '16px', background: '#F0C040', color: '#1E3A5F', padding: '2px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '700' }}>
-                      POPULAR
-                    </span>
-                  )}
+                 {test.popular && (
+  <span style={{ position: 'absolute', top: '16px', right: '16px', background: '#F0C040', color: '#1E3A5F', padding: '2px 10px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: '700' }}>
+    POPULAR
+  </span>
+)}
+{test.slug === 'ontario-g1' && (
+  <span style={{ position: 'absolute', top: '42px', right: '16px', background: '#DCFCE7', color: '#15803D', padding: '2px 8px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: '700' }}>
+    🎁 + نسخة عربية مجاناً
+  </span>
+)}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                     <span style={{ fontSize: '2rem' }}>{test.icon}</span>
                     <div>
