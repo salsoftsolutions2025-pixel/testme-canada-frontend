@@ -210,7 +210,7 @@ export default function TestsPage() {
                         }}>
                           📋 Part 1 — General Rules
                         </Link>
-                        <Link href="/quiz/ontario-g1-signs" style={{
+                      <Link href="/quiz/ontario-g1-signs" style={{
                           background: '#DC2626', color: 'white',
                           padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
                           fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
@@ -218,6 +218,29 @@ export default function TestsPage() {
                         }}>
                           🛑 Part 2 — Road Signs
                         </Link>
+                        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '10px' }}>
+                          <div style={{ fontSize: '0.75rem', color: '#6B7280', marginBottom: '8px', textAlign: 'center' }}>
+                            🎁 مجاناً مع شراء G1 — النسخة العربية
+                          </div>
+                          <Link href="/quiz/ontario-g1-arabic" style={{
+                            background: '#065F46', color: 'white',
+                            padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+                            fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                            direction: 'rtl'
+                          }}>
+                            📋 الجزء الأول — القواعد العامة
+                          </Link>
+                          <Link href="/quiz/ontario-g1-signs-arabic" style={{
+                            background: '#7C3AED', color: 'white',
+                            padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+                            fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                            marginTop: '8px', direction: 'rtl'
+                          }}>
+                            🛑 الجزء الثاني — إشارات الطريق
+                          </Link>
+                        </div>
                       </div>
                     ) : (
                       <Link href={`/quiz/${test.slug}`} style={{
