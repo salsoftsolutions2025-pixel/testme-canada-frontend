@@ -81,7 +81,7 @@ export default function HomePage() {
             <div key={test.slug} style={{
               background: 'white', borderRadius: '16px', padding: '28px',
               boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-              border: test.isG1 ? '2px solid #2563EB' : '2px solid transparent',
+              border: '2px solid #E5E7EB',
             }}>
               {/* Icon + province badge */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
