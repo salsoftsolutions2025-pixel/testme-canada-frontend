@@ -105,7 +105,7 @@ export default function HomePage() {
               </div>
 
               {/* Ontario G1 — two part buttons */}
-              {test.isG1 ? (
+             {test.isG1 ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <Link href="/quiz/ontario-g1" style={{
                     background: '#1E3A5F', color: 'white',
@@ -122,6 +122,25 @@ export default function HomePage() {
                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
                   }}>
                     🛑 Part 2 — Road Signs
+                  </Link>
+                </div>
+              ) : test.isG1Arabic ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', direction: 'rtl' }}>
+                  <Link href="/quiz/ontario-g1-arabic" style={{
+                    background: '#1E3A5F', color: 'white',
+                    padding: '11px 16px', borderRadius: '8px', textAlign: 'center',
+                    fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+                  }}>
+                    📋 الجزء الأول — القواعد العامة
+                  </Link>
+                  <Link href="/quiz/ontario-g1-signs-arabic" style={{
+                    background: '#DC2626', color: 'white',
+                    padding: '11px 16px', borderRadius: '8px', textAlign: 'center',
+                    fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+                  }}>
+                    🛑 الجزء الثاني — إشارات الطريق
                   </Link>
                 </div>
               ) : (
