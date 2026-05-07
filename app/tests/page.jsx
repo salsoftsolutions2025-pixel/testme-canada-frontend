@@ -15,6 +15,20 @@ const ALL_TESTS = [
     color:       '#1E3A5F',
     isG1:        true,
   },
+
+  {
+    slug:        'ontario-g1-arabic',
+    name:        'اختبار G1 أونتاريو — عربي',
+    province:    'Ontario',
+    category:    'driving',
+    icon:        '🚗',
+    questions:   200,
+    freeQ:       5,
+    price:       7.99,
+    description: 'تدرّب على اختبار رخصة القيادة G1 في أونتاريو — القواعد العامة وإشارات الطريق باللغة العربية.',
+    color:       '#1E3A5F',
+    isG1Arabic:  true,
+  },
   {
     slug:        'ontario-m1',
     name:        'Ontario M1 Motorcycle Test',
@@ -210,38 +224,35 @@ export default function TestsPage() {
                         }}>
                           📋 Part 1 — General Rules
                         </Link>
-                      <Link href="/quiz/ontario-g1-signs" style={{
+                <Link href="/quiz/ontario-g1-signs" style={{
+                    background: '#DC2626', color: 'white',
+                     padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+                     fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+                     display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+               }}>
+           🛑 Part 2 — Road Signs
+            </Link>
+               </div>
+    ) : test.isG1Arabic ? (
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px', direction: 'rtl' }}>
+                        <Link href="/quiz/ontario-g1-arabic" style={{
+                          background: '#1E3A5F', color: 'white',
+                          padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+                          fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+                        }}>
+                          📋 الجزء الأول — القواعد العامة
+                        </Link>
+                        <Link href="/quiz/ontario-g1-signs-arabic" style={{
                           background: '#DC2626', color: 'white',
                           padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
                           fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
                           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
                         }}>
-                          🛑 Part 2 — Road Signs
+                          🛑 الجزء الثاني — إشارات الطريق
                         </Link>
-                        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '10px' }}>
-                          <div style={{ fontSize: '0.75rem', color: '#6B7280', marginBottom: '8px', textAlign: 'center' }}>
-                            🎁 مجاناً مع شراء G1 — النسخة العربية
-                          </div>
-                          <Link href="/quiz/ontario-g1-arabic" style={{
-                            background: '#065F46', color: 'white',
-                            padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
-                            fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                            direction: 'rtl'
-                          }}>
-                            📋 الجزء الأول — القواعد العامة
-                          </Link>
-                          <Link href="/quiz/ontario-g1-signs-arabic" style={{
-                            background: '#7C3AED', color: 'white',
-                            padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
-                            fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                            marginTop: '8px', direction: 'rtl'
-                          }}>
-                            🛑 الجزء الثاني — إشارات الطريق
-                          </Link>
-                        </div>
                       </div>
+
                     ) : (
                       <Link href={`/quiz/${test.slug}`} style={{
                         background: test.color, color: 'white',
