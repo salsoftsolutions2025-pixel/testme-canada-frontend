@@ -2689,7 +2689,7 @@ export default function QuizPage() {
 
   const testName    = TEST_NAMES[testSlug]  || 'Practice Test';
   const headerColor = HEADER_COLORS[testSlug] || '#1E3A5F';
-  const isSigns     = testSlug === 'ontario-g1-signs'|| testSlug === 'bc-knowledge-signs';
+  const isSigns = testSlug === 'ontario-g1-signs' || testSlug === 'bc-knowledge-signs' || testSlug === 'ontario-g1-signs-arabic';
   const isArabic = testSlug?.includes('arabic');
 
   // ── ALL state declarations first ──────────────────────────

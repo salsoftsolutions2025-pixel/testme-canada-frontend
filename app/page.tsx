@@ -3,7 +3,8 @@ import Link from 'next/link';
 export default function HomePage() {
   const tests = [
     // Ontario G1 — special card with two buttons
-    { slug: 'ontario-g1',    name: 'Ontario G1 Knowledge Test', icon: '🚗', province: 'Ontario', isG1: true },
+    { slug: 'ontario-g1',       name: 'Ontario G1 Knowledge Test',    icon: '🚗', province: 'Ontario', isG1: true },
+    { slug: 'ontario-g1-arabic', name: 'اختبار G1 أونتاريو — عربي', icon: '🚗', province: 'Ontario', isG1Arabic: true },
     // Other tests — single button each
     { slug: 'ontario-m1',    name: 'Ontario M1 Motorcycle',     icon: '🏍️', province: 'Ontario' },
     { slug: 'bc-knowledge',  name: 'BC ICBC Knowledge Test',    icon: '🚗', province: 'BC' },
