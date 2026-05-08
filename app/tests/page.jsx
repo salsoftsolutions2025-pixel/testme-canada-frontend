@@ -67,18 +67,19 @@ const ALL_TESTS = [
     color:       '#065F46',
   },
   // ── Alberta ─────────────────────────────────────────────────
-  {
-    slug:        'alberta-class5',
-    name:        'Alberta Class 5 Knowledge',
-    province:    'Alberta',
-    category:    'driving',
-    icon:        '🚗',
-    questions:   150,
-    freeQ:       5,
-    price:       7.99,
-    description: 'Prepare for the Alberta Class 5 driver knowledge test.',
-    color:       '#92400E',
-  },
+ {
+  slug:        'alberta-class5',
+  name:        'Alberta Class 7 Knowledge Test',
+  province:    'Alberta',
+  category:    'driving',
+  icon:        '🚗',
+  questions:   150,
+  freeQ:       5,
+  price:       7.99,
+  description: 'Prepare for the Alberta Class 7 learner knowledge test — General Rules and Road Signs.',
+  color:       '#92400E',
+  isAlberta:   true,
+},
   // ── Federal / Canada ────────────────────────────────────────
   {
     slug:        'citizenship',
@@ -233,6 +234,27 @@ export default function TestsPage() {
            🛑 Part 2 — Road Signs
             </Link>
                </div>
+
+) : test.isAlberta ? (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px' }}>
+    <Link href="/quiz/alberta-class5" style={{
+      background: '#92400E', color: 'white',
+      padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      📋 Part 1 — General Rules
+    </Link>
+    <Link href="/quiz/alberta-class5-signs" style={{
+      background: '#B45309', color: 'white',
+      padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      🛑 Part 2 — Road Signs
+    </Link>
+  </div>
+
     ) : test.isG1Arabic ? (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px', direction: 'rtl' }}>
                         <Link href="/quiz/ontario-g1-arabic" style={{
