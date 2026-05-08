@@ -80,6 +80,20 @@ const ALL_TESTS = [
   color:       '#92400E',
   isAlberta:   true,
 },
+
+{
+  slug:        'alberta-class5-arabic',
+  name:        'اختبار الصنف 7 في ألبرتا — عربي',
+  province:    'Alberta',
+  category:    'driving',
+  icon:        '🚗',
+  questions:   150,
+  freeQ:       5,
+  price:       7.99,
+  description: 'تدرّب على اختبار رخصة القيادة من الصنف 7 في ألبرتا — القواعد العامة وإشارات الطريق باللغة العربية.',
+  color:       '#92400E',
+  isAlbertaArabic: true,
+},
   // ── Federal / Canada ────────────────────────────────────────
   {
     slug:        'citizenship',
@@ -252,6 +266,26 @@ export default function TestsPage() {
       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
     }}>
       🛑 Part 2 — Road Signs
+    </Link>
+  </div>
+
+  ) : test.isAlbertaArabic ? (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px', direction: 'rtl' }}>
+    <Link href="/quiz/alberta-class5-arabic" style={{
+      background: '#92400E', color: 'white',
+      padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      📋 الجزء الأول — القواعد العامة
+    </Link>
+    <Link href="/quiz/alberta-class5-signs-arabic" style={{
+      background: '#B45309', color: 'white',
+      padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      🛑 الجزء الثاني — إشارات الطريق
     </Link>
   </div>
 
