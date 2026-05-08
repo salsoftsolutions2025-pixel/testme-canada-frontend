@@ -87,8 +87,8 @@ export default function HomePage() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                 <span style={{ fontSize: '3rem' }}>{test.icon}</span>
                 <span style={{
-                background: `${(provinceColors as Record<string, string>)[test.province]}18`,
-                color: (provinceColors as Record<string, string>)[test.province],
+               background: `${(provinceColors as Record<string, string>)[test.province ?? '']}18`,
+                  color: (provinceColors as Record<string, string>)[test.province ?? ''],
                   padding: '4px 12px', borderRadius: '20px',
                   fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase'
                 }}>
