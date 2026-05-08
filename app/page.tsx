@@ -1,14 +1,24 @@
 import Link from 'next/link';
 
+type TestCard = {
+  slug: string;
+  name: string;
+  icon: string;
+  province: string;
+  isG1?: boolean;
+  isG1Arabic?: boolean;
+  isAlberta?: boolean;
+};
+
 export default function HomePage() {
-  const tests = [
+  const tests: TestCard[] = [
     // Ontario G1 — special card with two buttons
     { slug: 'ontario-g1',       name: 'Ontario G1 Knowledge Test',    icon: '🚗', province: 'Ontario', isG1: true },
     { slug: 'ontario-g1-arabic', name: 'اختبار G1 أونتاريو — عربي', icon: '🚗', province: 'Ontario', isG1Arabic: true },
     // Other tests — single button each
     { slug: 'ontario-m1',    name: 'Ontario M1 Motorcycle',     icon: '🏍️', province: 'Ontario' },
     { slug: 'bc-knowledge',  name: 'BC ICBC Knowledge Test',    icon: '🚗', province: 'BC' },
-    { slug: 'alberta-class5',name:        'Alberta Class 7 Knowledge Test', isAlberta:   true, },
+    { slug: 'alberta-class5', name: 'Alberta Class 7 Knowledge Test', icon: '🚗', province: 'Alberta', isAlberta: true },
     { slug: 'citizenship',   name: 'Citizenship Test',          icon: '🍁', province: 'Canada' },
     { slug: 'food-handler',  name: 'Food Handler',              icon: '🍽️', province: 'Canada' },
     { slug: 'ontario-az',    name: 'AZ Truck Licence',          icon: '🚛', province: 'Ontario' },
@@ -87,8 +97,8 @@ export default function HomePage() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                 <span style={{ fontSize: '3rem' }}>{test.icon}</span>
                 <span style={{
-               background: `${(provinceColors as Record<string, string>)[test.province ?? '']}18`,
-                  color: (provinceColors as Record<string, string>)[test.province ?? ''],
+                 background: `${provinceColors[test.province as keyof typeof provinceColors] ?? '#2563EB'}18`,
+                color: provinceColors[test.province as keyof typeof provinceColors] ?? '#2563EB',
                   padding: '4px 12px', borderRadius: '20px',
                   fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase'
                 }}>
@@ -186,7 +196,7 @@ export default function HomePage() {
               ) : (
                 <Link href={`/quiz/${test.slug}`} style={{
                   display: 'block',
-                 background: (provinceColors as Record<string, string>)[test.province ?? ''] || '#2563EB',
+                 background: provinceColors[test.province as keyof typeof provinceColors] || '#2563EB',
                   color: 'white', padding: '11px 16px', borderRadius: '8px',
                   textAlign: 'center', fontWeight: '700', textDecoration: 'none',
                   fontSize: '0.95rem'
