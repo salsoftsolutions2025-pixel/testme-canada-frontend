@@ -186,7 +186,7 @@ export default function HomePage() {
               ) : (
                 <Link href={`/quiz/${test.slug}`} style={{
                   display: 'block',
-                  background: (provinceColors as Record<string, string>)[test.province] || '#2563EB',
+                 background: (provinceColors as Record<string, string>)[test.province ?? ''] || '#2563EB',
                   color: 'white', padding: '11px 16px', borderRadius: '8px',
                   textAlign: 'center', fontWeight: '700', textDecoration: 'none',
                   fontSize: '0.95rem'
