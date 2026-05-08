@@ -13,8 +13,8 @@ const TESTS = [
   { slug:'ontario-az',        name:'Ontario AZ Truck Licence',   icon:'🚛', province:'Ontario',          category:'driving',      price:7.99, questions:60,  popular:false },
   { slug:'bc-knowledge',      name:'BC ICBC Knowledge Test',     icon:'🚗', province:'British Columbia', category:'driving',      price:7.99, questions:40,  popular:false },
   { slug:'bc-knowledge-signs',name:'BC ICBC Road Signs',         icon:'🛑', province:'British Columbia', category:'driving',      price:7.99, questions:38,  popular:false },
-  { slug:'alberta-class5',    name:'Alberta Class 5 Knowledge',  icon:'🚗', province:'Alberta',          category:'driving',      price:7.99, questions:40,  popular:false },
-  { slug:'citizenship',       name:'Canadian Citizenship Test',  icon:'🍁', province:'Canada',           category:'citizenship',  price:7.99, questions:60,  popular:true  },
+  { slug:'alberta-class5',       name:'Alberta Class 7 — General Rules', icon:'🚗', province:'Alberta', category:'driving', price:7.99, questions:40, popular:false },
+  { slug:'alberta-class5-signs', name:'Alberta Class 7 — Road Signs',    icon:'🛑', province:'Alberta', category:'driving', price:7.99, questions:30, popular:false },  { slug:'citizenship',       name:'Canadian Citizenship Test',  icon:'🍁', province:'Canada',           category:'citizenship',  price:7.99, questions:60,  popular:true  },
   { slug:'food-handler',      name:'Food Handler Certificate',   icon:'🍽️', province:'Canada',           category:'professional', price:7.99, questions:50,  popular:false },
   { slug:'whmis',             name:'WHMIS 2015 Certification',   icon:'⚠️', province:'Canada',           category:'professional', price:7.99, questions:50,  popular:false },
 ];

@@ -8,7 +8,7 @@ export default function HomePage() {
     // Other tests — single button each
     { slug: 'ontario-m1',    name: 'Ontario M1 Motorcycle',     icon: '🏍️', province: 'Ontario' },
     { slug: 'bc-knowledge',  name: 'BC ICBC Knowledge Test',    icon: '🚗', province: 'BC' },
-    { slug: 'alberta-class5',name: 'Alberta Class 5 Knowledge', icon: '🚗', province: 'Alberta' },
+    { slug: 'alberta-class5',name:        'Alberta Class 7 Knowledge Test', isAlberta:   true, },
     { slug: 'citizenship',   name: 'Citizenship Test',          icon: '🍁', province: 'Canada' },
     { slug: 'food-handler',  name: 'Food Handler',              icon: '🍽️', province: 'Canada' },
     { slug: 'ontario-az',    name: 'AZ Truck Licence',          icon: '🚛', province: 'Ontario' },
@@ -124,6 +124,46 @@ export default function HomePage() {
                     🛑 Part 2 — Road Signs
                   </Link>
                 </div>
+                ) : test.isAlberta ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '4px' }}>
+                <Link href="/quiz/alberta-class5" style={{
+                 background: '#92400E', color: 'white',
+                 padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+                fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+                }}>
+               📋 Part 1 — General Rules
+               </Link>
+    <Link href="/quiz/alberta-class5-signs" style={{
+      background: '#B45309', color: 'white',
+      padding: '12px 16px', borderRadius: '10px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.95rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      🛑 Part 2 — Road Signs
+    </Link>
+  </div> 
+
+                ) : test.isAlberta ? (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+    <Link href="/quiz/alberta-class5" style={{
+      background: '#92400E', color: 'white',
+      padding: '11px 16px', borderRadius: '8px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      📋 Part 1 — General Rules
+    </Link>
+    <Link href="/quiz/alberta-class5-signs" style={{
+      background: '#B45309', color: 'white',
+      padding: '11px 16px', borderRadius: '8px', textAlign: 'center',
+      fontWeight: '700', textDecoration: 'none', fontSize: '0.9rem',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'
+    }}>
+      🛑 Part 2 — Road Signs
+    </Link>
+  </div>
+
               ) : test.isG1Arabic ? (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', direction: 'rtl' }}>
                   <Link href="/quiz/ontario-g1-arabic" style={{
