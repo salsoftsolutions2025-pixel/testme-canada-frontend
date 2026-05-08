@@ -918,13 +918,7 @@ const CITIZENSHIP_QUESTIONS_FULL = [
     correct: 2,
     explanation: 'O Canada is the national anthem. It was originally written in French in 1880 and officially adopted as the national anthem in 1980.',
   },
-  {
-    id: 7,
-    question: 'What do you call the Queen or King of Canada\'s representative in each province?',
-    choices: ['The Premier', 'The Lieutenant Governor', 'The Mayor', 'The Senator'],
-    correct: 1,
-    explanation: 'The Lieutenant Governor represents the King or Queen in each province. At the federal level, the Governor General represents the monarch.',
-  },
+ { id:7, question:'What do you call the King of Canada\'s representative in each province?', choices:['The Premier','The Lieutenant Governor','The Mayor','The Senator'], correct:1, explanation:'The Lieutenant Governor represents King Charles III in each province. At the federal level, the Governor General represents the monarch.' },
   {
     id: 8,
     question: 'Which European explorer is credited with the first European contact with Canada\'s mainland?',
@@ -1312,6 +1306,19 @@ const CITIZENSHIP_QUESTIONS_FULL = [
     correct: 1,
     explanation: 'A minority government occurs when the governing party holds fewer than half the seats in the House of Commons. It must gain support from other parties to pass legislation.',
   },
+
+{ id:61, question:'What are three responsibilities of Canadian citizenship?', choices:['Being loyal to Canada, recycling, and serving in the military','Obeying the law, taking responsibility for oneself and one\'s family, and serving on a jury','Learning both official languages, voting, and belonging to a union','Buying Canadian products, owning a business, and using less water'], correct:1, explanation:'The three key responsibilities of citizenship are: obeying the law, taking responsibility for oneself and one\'s family, and serving on a jury when called.' },
+{ id:62, question:'What is the highest honour available to Canadians?', choices:['The Order of Canada','The Governor General\'s Award','The Victoria Cross (VC)','The Medal of Bravery'], correct:2, explanation:'The Victoria Cross (VC) is the highest honour available to Canadians. It is awarded for the most conspicuous bravery in the presence of the enemy.' },
+{ id:63, question:'What is the difference between the role of the King and the Prime Minister?', choices:['The King makes laws, the PM enforces them','The King is head of state and reigns but does not govern — the PM is head of government and leads the Cabinet','The PM and King have equal power','The King appoints the PM and can remove them at will'], correct:1, explanation:'The King (head of state) reigns but does not govern. The Prime Minister (head of government) leads the Cabinet and governs the country day to day.' },
+{ id:64, question:'In Canada, are you obliged to tell other people how you voted?', choices:['Yes — voting records are public','Yes — employers can ask','No — voting is by secret ballot and you are not required to tell anyone','Only for federal elections'], correct:2, explanation:'Voting in Canada is by secret ballot. You are not required to tell anyone — not employers, family, or government — how you voted.' },
+{ id:65, question:'Which provinces are referred to as the Atlantic Provinces?', choices:['Ontario, Quebec, Nova Scotia, New Brunswick','New Brunswick, Nova Scotia, Prince Edward Island, and Newfoundland and Labrador','British Columbia, Alberta, Saskatchewan, Manitoba','Yukon, Northwest Territories, Nunavut, and Manitoba'], correct:1, explanation:'The Atlantic Provinces are New Brunswick, Nova Scotia, Prince Edward Island, and Newfoundland and Labrador — located on Canada\'s Atlantic coast.' },
+{ id:66, question:'Who are the Métis?', choices:['Indigenous people of the Arctic','People of mixed First Nations and European ancestry who developed a distinct culture','The original inhabitants of British Columbia','French settlers who came to Quebec in the 1600s'], correct:1, explanation:'The Métis are people of mixed First Nations and European (mainly French) ancestry who developed a unique culture, language (Michif), and identity.' },
+{ id:67, question:'What does the word "Inuit" mean?', choices:['The Brave Ones','The Northern People','The People','The Ice Hunters'], correct:2, explanation:'"Inuit" means "The People" in Inuktitut. The Inuit live in the Arctic and have inhabited Canada\'s far north for thousands of years.' },
+{ id:68, question:'What did the Canadian Pacific Railway symbolize?', choices:['Canada\'s military strength','National unity — it fulfilled the promise to bring British Columbia into Confederation and connected Canada from coast to coast','Canada\'s trade relationship with the USA','The end of the fur trade era'], correct:1, explanation:'The Canadian Pacific Railway, completed in 1885, symbolized national unity. It fulfilled the promise made to BC to join Confederation and physically connected Canada from coast to coast.' },
+{ id:69, question:'What is the significance of the discovery of insulin by Sir Frederick Banting and Charles Best?', choices:['It led to the creation of Canada\'s healthcare system','It was a major medical breakthrough that has saved millions of lives worldwide — one of Canada\'s greatest contributions to medicine','It won Canada its first Nobel Prize in literature','It established the University of Toronto as a research institution'], correct:1, explanation:'The discovery of insulin in 1921 by Sir Frederick Banting and Charles Best at the University of Toronto transformed diabetes from a fatal disease into a manageable condition, saving millions of lives.' },
+
+
+
 ];
 
 // ── WHMIS 2015 Certification — 50 Questions ──────────────────
